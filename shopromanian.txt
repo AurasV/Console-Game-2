@@ -1,0 +1,84 @@
+Bine ai venit la magazinul lui Veronika! 
+Eu sunt Veronika, Prorietara. 
+Cu ce te pot ajuta? 
+1) Cumpara 
+2) Vinde 
+0) Iesi 
+Ce vrei sa cumperi? 
+1) Armuri 
+2) Arme 
+3) Potiuni de Viata 
+0) Inapoi 
+Ce fel de armura vrei sa cumperi? 
+1) Piele +1 DEF pentru fiecare parte 
+2) Aur +2 DEF pentru fiecare parte 
+3) Fier +3 DEF pentru fiecare parte 
+4) Diamant +4 DEF pentru fiecare parte 
+5) Netherit +5 DEF pentru fiecare parte 
+0) Inapoi 
+Alege ce armura de piele cumperi: 
+1) Casca +1 DEF -100A 
+2) Tunica +1 DEF -100A 
+3) Pantaloni +1 DEF -100A 
+4) Cizme +1 DEF -100A 
+0) Inapoi 
+Alege ce armura de aur cumperi: 
+1) Casca +2 DEF -200A 
+2) Platosa +2 DEF -200A 
+3) Jambiere +2 DEF -200A 
+4) Cizme +2 DEF -200A 
+0) Inapoi 
+Alege ce armura de fier cumperi: 
+1) Casca +3 DEF -300A 
+2) Platosa +3 DEF -300A 
+3) Jambiere +3 DEF -300A 
+4) Cizme +3 DEF -300A 
+0) Inapoi 
+Alege ce armura de diamant cumperi: 
+1) Casca +4 DEF -400A 
+2) Platosa +4 DEF -400A 
+3) Jambiere +4 DEF -400A 
+4) Cizme +4 DEF -400A 
+0) Inapoi 
+Alege ce armura de netherit cumperi: 
+1) Casca +5 DEF -500A 
+2) Platosa +5 DEF -500A 
+3) Jambiere +5 DEF -500A 
+4) Cizme +5 DEF -500A 
+0) Inapoi 
+Ce tip de arma vrei sa cumperi? 
+1) Mana Principala 
+2) Mana Secundara 
+0) Inapoi 
+Alege ce arma pentru mana principala cumperi: 
+1) Sabie de Lemn +1 ATK -100A 
+2) Sabie de Piatra +2 ATK -200A 
+3) Sabie de Fier +3 ATK -300A 
+4) Sabie de Diamant +4 ATK -400A 
+5) Sabie de Netherit +5 ATK -500A 
+0) Inapoi 
+Alege ce arma pentru mana secundara cumperi: 
+1) Arc +3 ATK -300A 
+2) Arbaleta +4 ATK -400A 
+3) Trident +5 ATK -500A 
+0) Inapoi 
+Ce fel de potiune de viata cumperi? 
+1) Potiune de Viata Normala - Regenerates 10HP 
+2) Potiune de Viata Superioara - Regenerates 20HP 
+3) Potiune de Viata Suprema - Regenerates 30HP 
+0) Inapoi 
+Ce vrei sa vinzi? 
+1) Os +5A 
+2) Carne Putrezita +10A 
+3) Lingou de Fier +15A 
+4) Praf de Pusca +25A 
+0) Inapoi 
+Nu ai 
+! 
+Nu ai destul aur pentru a cumpara 
+Intrare incorecta, te rog incearca din nou. 
+Ai vandut 
+Apasa orice tasta pentru a continua. 
+Ai cumparat 
+Ai armura mai buna deja! 
+Ai arma mai buna deja! 

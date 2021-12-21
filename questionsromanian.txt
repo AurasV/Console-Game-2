@@ -1,0 +1,4 @@
+Numele tau este:
+este acest nume corect?
+1) Da
+2) Nu

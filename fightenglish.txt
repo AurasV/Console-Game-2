@@ -1,0 +1,14 @@
+You've been attacked by: 
+You're currently fighting: 
+has 
+hp
+Choose what you want to do: 
+1) Attack
+2) Use an item
+3) Try to run
+You did 
+damage.
+You lost the battle.
+You won! Congratulations!
+You gained 
+xp and

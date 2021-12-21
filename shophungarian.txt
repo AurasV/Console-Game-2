@@ -1,0 +1,84 @@
+Udvozollek Veronika Uzleteben! 
+Az en nevem Veronika, a te eladod es egyben Uzlet tulaj. 
+Miben segithetek? 
+1) Venni 
+2) Eladni 
+0) Kilepes 
+Mit szeretnel vasarolni? 
+1) Pancelokat 
+2) Fegyvereket 
+3) Gyogyelixir 
+0) Vissza 
+Milyen tipusu pancelt szeretnel venni? 
+1) Bor + 1 vedekezes minden darabjaert 
+2) Arany + 2 vedekezes minden darabjaert 
+3) Vas + 3 vedekezes minden darabjaert 
+4) Gyemant + 4 vedekezes minden darabjaert 
+5) Netherita + 5 vedekezes minden darabjaert 
+0) Vissza
+Valassz bor pancelt: 
+1) Sisak +1 vedekezes -100A 
+2) Pancel +1 vedekezes -100A 
+3) Nadrag +1 vedekezes -100A 
+4) Csizma +1 vedekezes -100A 
+0) Vissza 
+Valassz arany pancelt: 
+1) Sisak +2 vedekezes -200A 
+2) Pancel +2 vedekezes -200A 
+3) Nadrag +2 vedekezes -200A 
+4) Csizma +2 vedekezes -200A 
+0) Vissza 
+Valassz vas pancelt: 
+1) Sisak +3 vedekezes -300A 
+2) Pancel +3 vedekezes -300A 
+3) Nadrag +3 vedekezes -300A 
+4) Csizma +3 vedekezes -300A 
+0) Vissza 
+Valassz gyemant pancelt: 
+1) Sisak +4 vedekezes -400A 
+2) Pancel +4 vedekezes -400A 
+3) Nadrag +4 vedekezes -400A 
+4) Csizma +4 vedekezes -400A 
+0) Vissza 
+Valassz netherita pancelt: 
+1) Sisak +5 vedekezes -500A 
+2) Pancel +5 vedekezes -500A 
+3) Nadrag +5 vedekezes -500A 
+4) Csizma +5 vedekezes -500A 
+0) Vissza 
+Milyen tipusu fegyvert szeretnel? 
+1) Fo fegyver 
+2) Masodlagos fegyver 
+0) Vissza 
+Valassz fo fegyvert: 
+1) Fa kard +1 tamadas -100A 
+2) Ko kard +2 tamadas -200A 
+3) Vas kard +3 tamadas -300A 
+4) Gyemant kard +4 tamadas -400A 
+5) Netherita kard +5 tamadas -500A 
+0) Vissza 
+Valasz masodlagos fegyvert:
+1) Ij +3 tamadas -300A 
+2) Szamszerij +4 tamadas -400A 
+3) Szigony +5 tamadas -500A 
+0) Vissza 
+What type of potion would you like to buy? Milyen tipusu bajitalt szeretnel? 
+1) Normal gyogyelixir - 10Hp-t regeneral vissza -10A 
+2) Remek gyogyelixir - 20Hp-t regeneral vissza -20A 
+3) Rendkivuli elixir - 30Hp-t regeneral vissza -30A 
+0) Vissza 
+Mit szeretnel eladni 
+1) Csont +5A 
+2) Rohdat Hus +10A 
+3) Vasrud +15A 
+4) Puskapor +25A 
+0) Vissza
+Nem rendelkezzel ezzel az eszkozzel 
+!
+Nincs elegendo aranyad ahiz hogy ezt megvedd 
+Hiba, kerlek probald ujra: 
+ adtal el 
+Nyomji barmilyen gombot a kilepeshez
+Bought but hungarian 
+You have better armor already but hungarian!
+You have better weapon already but hungarian! 

@@ -1,0 +1,10 @@
+Day 
+Choose what you want to do: 
+1) Find an enemy 
+2) Go to the shop 
+3) Go to sleep (Passes day and regenerates HP completely) 
+4) Check your status 
+5) Save game 
+6) Load game 
+0) Quit game 
+Are you sure you want to quit? 

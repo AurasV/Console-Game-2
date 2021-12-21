@@ -1,0 +1,10 @@
+ nap 
+Valassz mit szeretnel cainalni: 
+1) Ellenseget keresni 
+2) A boltba menni 
+3) Nyugovora terni (egy nap eltelik es a HP-d teljesen feltoltodik) 
+4) Statusz ellenorzes 
+5) Jatek mentes 
+6) Jatek betoltes 
+0) Jatek kilepes 
+Biztos vagy benne hogy kiszeretnel lepni? 

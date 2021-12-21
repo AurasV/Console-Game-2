@@ -1,0 +1,120 @@
+Leather Cap
+Casca de Piele
+Borsisak
+head
+1
+100
+Leather Tunic
+Tunica de Piele
+Borzubbony
+chest
+1
+100
+Leather Pants
+Pantaloni de Piele
+Bornadrag
+pants
+1
+100
+Leather Boots
+Cizme de Piele
+Borocsizma
+boots
+1
+100
+Golden Helmet
+Casca de Aur
+Aranysisak
+head
+2
+200
+Golden Chestplate
+Platosa de Aur
+Arany Mellvert
+chest
+2
+200
+Golden Leggings
+Jambiere de Aur
+Arany Labszarvedo
+pants
+2
+200
+Golden Boots
+Cizme de Aur
+Aranycsizma
+boots
+2
+200
+Iron Helmet
+Casca de Fier
+Vassisak
+head
+3
+300
+Iron Chestplate
+Platosa de Fier
+Vas Mellvert
+chest
+3
+300
+Iron Leggings
+Jambiere de Fier
+Vas Labszarvedo
+pants
+3
+300
+Iron Boots
+Cizme de Fier
+Vascsizma
+boots
+3
+300
+Diamond Helmet
+Casca de Diamant
+Gyemantsisak
+head
+4
+400
+Diamond Chestplate
+Platosa de Diamant
+Gyemant Mellvert
+chest
+4
+400
+Diamond Leggings
+Jambiere de Diamant
+Gyemant Labszarvedo
+pants
+4
+400
+Diamond Boots
+Cizme de Diamant
+Gyemantcsizma
+boots
+4
+400
+Netherite Helmet
+Casca de Netherit
+Netheritsisak
+head
+5
+500
+Netherite Chestplate
+Platosa de Netherit
+Netherit Mellvert
+chest
+5
+500
+Netherite Leggings
+Jambiere de Netherit
+Netherit Labszarvedo
+pants
+5
+500
+Netherite Boots
+Cizme de Netherit
+Netheritcsizma
+boots
+5
+500

@@ -1,0 +1,40 @@
+Iron Golem
+Iron Ingot
+Lingou de Fier
+Vasrud
+7
+2
+100
+100
+Zombie
+Rotten Flesh
+Carne Putrezita
+Rohadt Hus
+2.5
+2
+20
+20
+Skeleton
+Bone
+Os
+Csont
+4
+2
+20
+20
+Creeper
+Gunpowder
+Praf de Pusca
+Puskapor
+22.5
+2
+20
+20
+Husk
+Rotten flesh
+Carne Putrezita
+Rohadt Hus
+2.5
+2
+20
+20

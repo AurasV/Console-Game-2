@@ -1,0 +1,10 @@
+Ziua 
+Alege ce vrei sa faci: 
+1) Cauta un Inamic 
+2) Mergi la Magazin 
+3) Culca-te (Trece ziua si iti regenereaza HP complet 
+4) Verifica-ti statusul 
+5) Salveaza jocul 
+6) Incarca jocul
+0) Iesi din joc
+Esti sigur ca vrei sa iesi? 

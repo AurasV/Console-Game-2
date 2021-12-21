@@ -1,0 +1,48 @@
+Wodden Sword
+Sabie de Lemn
+Fakard
+main
+1
+100
+Stone Sword
+Sabie de Piatra
+Kokard
+main
+2
+200
+Iron Sword
+Sabie de Fier
+Aranykard
+main
+3
+300
+Diamond Sword
+Sabie de Diamant
+Gyemantkard
+main
+4
+400
+Netherite Sword
+Sabie de Netherit
+Netherikard
+main
+5
+500
+Bow
+Arc
+Ij
+off
+3
+300
+Crossbow
+Arbaleta
+Szamszerij
+off
+4
+400
+Trident
+Trident
+Szigony
+off
+5
+500

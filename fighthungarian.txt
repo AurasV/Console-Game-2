@@ -1,0 +1,14 @@
+Megtamadt: 
+Harcolsz: 
+HP-val rendelkezik
+jelenlegi eletero 
+Valasz az alabbi opciok kozul, mit szeretnel tenni: 
+1) Tamadas 
+2) Hasznalj egy eszkozt 
+3) Probalj meg futni. 
+
+sebzést okoztál
+A harcot elvesztetted. 
+Nyertel! Ugyes! 
+Szereztel 
+XP-t es 

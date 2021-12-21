@@ -1,0 +1,4 @@
+Nev:
+ez a nev helyes? 
+1) Igen 
+2) Nem 

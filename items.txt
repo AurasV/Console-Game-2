@@ -1,0 +1,28 @@
+Iron Ingot 
+Lingou de Fier 
+Vasrud 
+20 
+Rotten Flesh 
+Carne Putrezita 
+Rohadt Hus 
+10 
+Bone 
+Os 
+Csont 
+5 
+Gunpowder 
+Praf de Pusca 
+Puskapor 
+25 
+Normal Health Potion 
+Potiune de Viata Normala 
+Normal gyogyelixir 
+10 
+Greater Health Potion 
+Potiune de Viata Superioara 
+Remek gyogyelixir 
+15 
+Supreme Health Potion 
+Potiune de Viata Suprema 
+Rendkivuli elixir 
+20 

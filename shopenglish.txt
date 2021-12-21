@@ -1,0 +1,84 @@
+Welcome to Veronika's shop! 
+I'm the owner, Veronika. 
+What can I help you with? 
+1) Buy 
+2) Sell 
+0) Exit 
+What do you want to buy? 
+1) Armors 
+2) Weapons 
+3) Health Potions 
+0) Go Back 
+What type of armor do you want to buy? 
+1) Leather +1 DEF for each piece 
+2) Gold +2 DEF for each piece 
+3) Iron +3 DEF for each piece 
+4) Diamond +4 DEF for each piece 
+5) Netherite +5 DEF for each piece 
+0) Go Back 
+Choose what leather armor to buy: 
+1) Helmet +1 DEF -100G 
+2) Chestplate +1 DEF -100G 
+3) Pants +1 DEF -100G 
+4) Boots +1 DEF -100G 
+0) Go Back 
+Choose what gold armor to buy: 
+1) Helmet +2 DEF -200G 
+2) Chestplate +2 DEF -200G 
+3) Pants +2 DEF -200G 
+4) Boots +2 DEF -200G 
+0) Go Back 
+Choose what iron armor to buy: 
+1) Helmet +3 DEF -300G 
+2) Chestplate +3 DEF -300G 
+3) Pants +3 DEF -300G 
+4) Boots +3 DEF -300G 
+0) Go Back 
+Choose what diamond armor to buy: 
+1) Helmet +4 DEF -400G 
+2) Chestplate +4 DEF -400G 
+3) Pants +4 DEF -400G 
+4) Boots +4 DEF -400G 
+0) Go Back 
+Choose what netherite armor to buy: 
+1) Helmet +5 DEF -500G 
+2) Chestplate +5 DEF -500G 
+3) Pants +5 DEF -500G 
+4) Boots +5 DEF -500G 
+0) Go Back 
+What type of weapon would you like to buy? 
+1) Main Hand 
+2) Off Hand 
+0) Go Back 
+Choose a main hand weapon to buy: 
+1) Wooden Sword +1 ATK -100G 
+2) Stone Sword +2 ATK -200G 
+3) Iron Sword +3 ATK -300G 
+4) Diamond Sword +4 ATK -400G 
+5) Netheire Sword +5 ATK -500G 
+0) Go Back 
+Choose an off-hand weapon to buy: 
+1) Bow +3 ATK -300G 
+2) Crossbow +4 ATK -400G 
+3) Trident +5 ATK -500G 
+0) Go Back 
+What type of potion would you like to buy? 
+1) Normal Health Potion - Regenerates 10HP - 10G 
+2) Greater Health Potion - Regenerates 20HP - 15G 
+3) Ultimate Health Potion - Regenerates 30HP - 20G 
+0) Go Back 
+What would you like to sell? 
+1) Bone +5G 
+2) Rotten Flesh + 10G 
+3) Iron Ingot +15G 
+4) Gunpowder +25G 
+0) Go Back 
+You don't have any 
+! 
+You don't have enough gold to buy 
+Incorrect input, please try again. 
+You sold 
+Press any key to continue. 
+Bought 
+You have better armor already! 
+You have better weapon already! 
