@@ -2,3 +2,13 @@ Nev:
 ez a nev helyes? 
 1) Igen 
 2) Nem 
+Choose the save slot you want to save to but hungarian:  
+1) Save Slot 1 
+2) Save Slot 2 
+3) Save Slot 3 
+0) Back 
+Choose the save slot you want to load from but hungarian: 
+1) Save Slot 1 
+2) Save Slot 2 
+3) Save Slot 3 
+0) Back 

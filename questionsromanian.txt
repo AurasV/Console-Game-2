@@ -2,3 +2,13 @@ Numele tau este:
 este acest nume corect?
 1) Da
 2) Nu
+Alege save slotul in care salvezi: 
+1) Save Slot 1 
+2) Save Slot 2 
+3) Save Slot 3 
+0) Back 
+Alege save slotul din care vrei sa incarci: 
+1) Save Slot 1 
+2) Save Slot 2 
+3) Save Slot 3 
+0) Back 

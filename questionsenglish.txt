@@ -2,3 +2,13 @@ Your name is:
 is this name correct?
 1) Yes
 2) No
+Choose the save slot you want to save to:  
+1) Save Slot 1 
+2) Save Slot 2 
+3) Save Slot 3 
+0) Back 
+Choose the save slot you want to load from: 
+1) Save Slot 1 
+2) Save Slot 2 
+3) Save Slot 3 
+0) Back 
