@@ -16,13 +16,13 @@ Puskapor
 25 
 Normal Health Potion 
 Potiune de Viata Normala 
-Normal gyogyelixir 
+Normal Gyogyelixir 
 10 
 Greater Health Potion 
 Potiune de Viata Superioara 
-Remek gyogyelixir 
+Remek Gyogyelixir 
 15 
 Supreme Health Potion 
 Potiune de Viata Suprema 
-Rendkivuli elixir 
+Rendkivuli Elixir 
 20 

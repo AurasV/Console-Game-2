@@ -4,11 +4,18 @@ HP-val rendelkezik
 jelenlegi eletero 
 Valasz az alabbi opciok kozul, mit szeretnel tenni: 
 1) Tamadas 
-2) Hasznalj egy eszkozt 
-3) Probalj meg futni. 
+2) Use a health potion but hungarian  
+3) Check enemy stats but hungarian 
+0) Probalj meg futni 
 
-sebzést okoztál
+ sebzest okoztal 
 A harcot elvesztetted. 
 Nyertel! Ugyes! 
 Szereztel 
 XP-t es 
+Successfully escaped! but hungarian 
+You didn't escape! but hungarian 
+You have: but hungarian 
+Normal Gyogyelixir - 
+Remek Gyogyelixir - 
+Rendkivuli Elixir - 

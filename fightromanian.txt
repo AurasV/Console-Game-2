@@ -4,11 +4,18 @@ are
 hp
 Alege ce vrei sa faci: 
 1) Ataca
-2) Foloseste un item
+2) Foloseste o potiune de viata
 3) Incearca sa fugi
+0) Incearca sa fugi
 Ai dat 
 damage.
 Ai pierdut batalia.
 Ai castigat! Felicitari!
 Ai primit 
 xp si
+Ai scapat cu succes! 
+Nu ai reusit sa scapi! 
+Ai: 
+Potiune de Viata Normala - 
+Potiune de Viata Superioara - 
+Potiune de Viata Suprema - 

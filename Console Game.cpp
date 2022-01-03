@@ -105,51 +105,53 @@ enemy iron_golem, zombie, skeleton, creeper, husk, current_enemy; //enemies
 item iron_ingot, rotten_flesh, bone, gunpowder, normal_hp, greater_hp, supreme_hp;; //items
 player pc; //player
 equipment equip; //currently equipped stuff
-void languagechoice(); //language choice
-void read_language(char a, int& language); //read the story and the questions
-void readfight(); //read all fight needed text
-void readweapons(); //read all weapons
-void readenemies(); //read all enemies
-void readarmors(); //read all armors
-void readitems(); //read all items
-void playercurrentstate(player& x); //output current player state
+void languagechoice(); //language choice function
+void read_language(char a, int& language); //read the story and the questions function
+void readfight(); //read all fight needed text function
+void readweapons(); //read all weapons function
+void readenemies(); //read all enemies function
+void readarmors(); //read all armors function
+void readitems(); //read all items function
+void playercurrentstate(player& x); //output current player state function
 void fight_action(enemy& current_enemy); //fight function
 void fight_enemy_generate(enemy& enemy); //generate enemy function
-void ico(); //input one character then clear console
-void enemy_stats(enemy& x); //output enemy_stats
-void weapons(weapon& x); //read weapons from file
-void enemies(enemy& x); //read enemy from file
-void armors(armor& x); //read armor from file
-void items(item& x); //read item from file
-void name(); //get the name of the character
-void tests(); //tests funciton
-void access_shop(); //access shop
-void shop_buy(); //buying section of shop
-void shop_sell(); //selling section of shop
-void buy_armor(); //armor buying section of shop
-void buy_weapon(); //weapon buying section of shop
-void buy_health_potion(); //health potion buying section of shop
-void buy_leather(); //leather armor buying section of shop
-void buy_gold(); //gold armor buying section of shop
-void buy_iron(); //iron armor buying section of shop
-void buy_diamond(); //diamond armor buying section of shop
-void buy_netherite(); //netherite armor buying section of shop
-void buy_main_hand(); //main hand weapon buying section of shop
-void buy_off_hand(); //off hand weapon buying section of shop
-void main_menu(); //main menu
+void ico(); //input one character then clear console function
+void enemy_stats(enemy& x); //output enemy stats function
+void weapons(weapon& x); //read weapons from file function
+void enemies(enemy& x); //read enemy from file function
+void armors(armor& x); //read armor from file function
+void items(item& x); //read item from file function
+void name(); //get the name of the character function
+void tests(); //tests  function
+void access_shop(); //access shop function
+void shop_buy(); //buying section of shop function
+void shop_sell(); //selling section of shop function
+void buy_armor(); //armor buying section of shop function
+void buy_weapon(); //weapon buying section of shop function
+void buy_health_potion(); //health potion buying section of shop function
+void buy_leather(); //leather armor buying section of shop function
+void buy_gold(); //gold armor buying section of shop function
+void buy_iron(); //iron armor buying section of shop function
+void buy_diamond(); //diamond armor buying section of shop function
+void buy_netherite(); //netherite armor buying section of shop function
+void buy_main_hand(); //main hand weapon buying section of shop function
+void buy_off_hand(); //off hand weapon buying section of shop function
+void main_menu(); //main menu function
 void readshop(); //shop reading function
 void readfight(); //fight reading function
 void readmenu(); //menu reading function
 void nice_try(); //nice try function
 void save_game(); //save game function
 void load_game(); //load game function
-void buy_armor_h(armor x);
-void buy_armor_c(armor x);
-void buy_armor_p(armor x);
-void buy_armor_b(armor x);
-void buy_main(weapon x);
-void buy_off(weapon x);
-void buy_hp(item& x);
+void buy_armor_h(armor x); //buy helmet function
+void buy_armor_c(armor x); //buy chestplate function
+void buy_armor_p(armor x); //buy pants function
+void buy_armor_b(armor x); //buy boots function
+void buy_main(weapon x); //buy main weapon function
+void buy_off(weapon x); //buy off weapon function
+void buy_hp(item& x); //buy health potion function
+void try_to_run(enemy& x); //try to run function
+void attack_enemy(enemy& x); //attack enemy function
 void languagechoice() //language choice
 {
     std::cout << "Choose a language.\nAlege limba.\nValassz nyelvet.\n\n\n1)English/Engleza/Angol\n2)Romana/Romanian/Roman\n3)Magyar/Maghiara/Hungarian\n";
@@ -801,9 +803,35 @@ void buy_health_potion() //buy health potion
 }
 void fight_action(enemy& current_enemy)
 {
-    if (ok_fight_first == true)
-        std::cout << fight[1] << " " << current_enemy.enemy_name; //you've been attacked by on the first run
-    else std::cout << fight[2] << " " << current_enemy.enemy_name; //you're currently fighting on the subsequent ones
+    system("CLS");
+    if (ok_fight_first == true) 
+    {
+        std::cout << fight[1] << " " << current_enemy.enemy_name << "\n"; //you've been attacked by on the first run
+        ok_fight_first = false;
+    }
+    else std::cout << fight[2] << " " << current_enemy.enemy_name << "\n"; //you're currently fighting on the subsequent ones
+    std::cout << current_enemy.enemy_name << fight[3] << current_enemy.CHP << fight[4];
+    for (int text = 5; text <= 9; text++)
+        std::cout << fight[text] << "\n"; //text
+    ico();
+    switch (a)
+    {
+    case '1':
+        attack_enemy(current_enemy);
+        break;
+    case '2':
+        //use health potion function goes here
+        break;
+    case '3':
+        enemy_stats(current_enemy);
+        break;
+    case '0':
+        try_to_run(current_enemy);
+        break;
+    default:
+        fight_action(current_enemy);
+        break;
+    }
 }
 //have to finish this ^
 void fight_enemy_generate(enemy& current_enemy) //generate enemy
@@ -849,7 +877,7 @@ void playercurrentstate(player& x) //output current player state
 }
 void enemy_stats(enemy& x) //output enemy stats
 {
-    //system("CLS");
+    system("CLS");
     switch (language)
     {
     case 1: //if the language is english
@@ -862,9 +890,41 @@ void enemy_stats(enemy& x) //output enemy stats
         std::cout << "Nev: " << x.enemy_name << "\n" << "Tamadas: " << x.ATK << "\n" << "Vedekezes: " << x.DEF << "\n" << "Az osszes eletero: " << x.THP << "\n" << "Jelenlegi eletero: " << x.CHP << "\n" << "Eszkozoket: " << x.drops; // output enemy stats and drops
         break;
     }
-        std::cout << "\n" << "\n";
+    std::cout << "\n" << shop[81];
+    ico();
+    fight_action(x);
 }
 //have to add the clear console here and finish it after fight functions are done ^
+void try_to_run(enemy& x)//atempt to run from a fight
+{
+    int escape = (rand() % 100) + 1; //randomness
+    if (escape >= 90)
+    {
+        std::cout << fight[16] << "\n" << shop[81];
+        ico();
+        main_menu();
+    }
+    else
+    {
+        std::cout << fight[17] << "\n" << shop[81];
+        ico();
+        fight_action(x);
+    }
+
+}
+void attack_enemy(enemy& x)
+{
+    int damage = pc.ATK + equip.mw_atk + equip.ow_atk - x.DEF; //default damage
+    int crit = (rand() % 100) + 1; //randomness
+    int random_bonus(rand() % 5 + 1); //random damage bonus
+    damage += random_bonus;
+    if (crit >= 95)
+        damage *= 2;
+    std::cout << fight[10] << damage << fight[11] << "\n" << shop[81];
+    ico();
+    fight_action(x);
+}
+//have to finish this ^
 void weapons(weapon& x) //read weapon from file
 {
     std::ifstream weaponstxt("weapons.txt");
@@ -1075,6 +1135,7 @@ void main_menu()
     switch (a)
     {
     case '1': //find enemy
+        ok_fight_first = true;
         fight_enemy_generate(current_enemy);
         fight_action(current_enemy);
         break;
@@ -1371,7 +1432,7 @@ void load_game()
     }
 }
 void nice_try()
-{ //overflow function
+{ //day overflow function
     std::cout << "Nice try! The game will now close";
     ico();
     exit(0);

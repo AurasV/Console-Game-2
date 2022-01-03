@@ -1,14 +1,21 @@
-You've been attacked by: 
+You've been attacked by:
 You're currently fighting: 
-has 
-hp
+ has 
+ hp 
 Choose what you want to do: 
 1) Attack
-2) Use an item
-3) Try to run
+2) Use a health potion
+3) Check enemy stats
+0) Try to run
 You did 
-damage.
+ damage.
 You lost the battle.
 You won! Congratulations!
 You gained 
 xp and
+Successfully escaped! 
+You didn't escape! 
+You have: 
+Normal Health Potion
+Greater Health Potion
+Supreme Health Potion
