@@ -1066,12 +1066,12 @@ void tests()
 void main_menu() 
 {
     if (language == 3)
-        std::cout << day << menu[1] << "\n";
+        std::cout << day << menu[1] << "\n"; //day 
     else
-        std::cout << menu[1] << day << "\n";
+        std::cout << menu[1] << day << "\n"; //day
     for (int menu_counter = 2; menu_counter <= 9; menu_counter++)
-        std::cout << menu[menu_counter] << "\n"; //output menu text
-    ico();
+        std::cout << menu[menu_counter] << "\n"; //text
+    ico(); //answer
     switch (a)
     {
     case '1': //find enemy
@@ -1094,19 +1094,19 @@ void main_menu()
     case '5': //save game
         save_game();
         break;
-    case '6':
+    case '6': //load game
         load_game();
         break;
-    case '0':
-        std::cout << menu[10] << "\n" << questions[3] << "\n" << questions[4] << "\n";
-        ico();
+    case '0': //exit
+        std::cout << menu[10] << "\n" << questions[3] << "\n" << questions[4] << "\n"; //are you sure?
+        ico(); //answer
         if (a == '1')
-        {
+        { //quit
             system("CLS");
             std::cout << "Quitting...";
             exit(0);
         }
-        else main_menu();
+        else main_menu(); //return
         break;
     default: //wrong input
         std::cout << shop[79] << "\n"; //if wrong input
@@ -1116,18 +1116,18 @@ void main_menu()
 }
 void save_game()
 {
-    system("CLS");
+    system("CLS"); //clear console
     for (int i = 5; i <= 9; i++)
-        std::cout << questions[i] << "\n";
-    ico();
+        std::cout << questions[i] << "\n"; //text
+    ico(); //read answer
     switch (a)
     {
     case '1':
     {
         std::ifstream save;
         save.open("save1.txt");
-        if (save.fail())
-        {
+        if (save.fail()) //check if the file already exists
+        { //if it doesn't
             save.close();
             std::ofstream save("save1.txt");
             system("CLS");
@@ -1138,11 +1138,11 @@ void save_game()
             save.close();
         }
         else
-        {
+        { //if it doesn't
             for (int skip = 15; skip <= 17; skip++)
-                std::cout << questions[skip] << "\n";
-            ico();
-            if (a == '1')
+                std::cout << questions[skip] << "\n"; //text
+            ico(); //answer
+            if (a == '1') //overwrite
             {
                 save.close();
                 std::ofstream save("save1.txt");
@@ -1153,7 +1153,7 @@ void save_game()
                 std::cout << "Saved" << "\n" << shop[81];
                 save.close();
             }
-            else
+            else //return 
                 main_menu();
         }
         ico();
@@ -1164,8 +1164,8 @@ void save_game()
     {
         std::ifstream save;
         save.open("save2.txt");
-        if (save.fail())
-        {
+        if (save.fail()) //check if the file already exists
+        { //if it does
             save.close();
             std::ofstream save("save2.txt");
             system("CLS");
@@ -1176,12 +1176,12 @@ void save_game()
             save.close();
         }
         else
-        {
+        { //if it does
             for (int skip = 15; skip <= 17; skip++)
-                std::cout << questions[skip] << "\n";
-            ico();
+                std::cout << questions[skip] << "\n"; //text
+            ico(); //answer
             if (a == '1')
-            {
+            { //overwrite
                 save.close();
                 std::ofstream save("save2.txt");
                 system("CLS");
@@ -1192,7 +1192,7 @@ void save_game()
                 save.close();
             }
             else
-                main_menu();
+                main_menu(); //return 
         }
         ico();
         main_menu();
@@ -1202,8 +1202,8 @@ void save_game()
     {
         std::ifstream save;
         save.open("save3.txt");
-        if (save.fail())
-        {
+        if (save.fail()) //check if file already exists
+        { //if it doesn't
             save.close();
             std::ofstream save("save3.txt");
             system("CLS");
@@ -1214,12 +1214,12 @@ void save_game()
             save.close();
         }
         else
-        {
+        { //if it does
             for (int skip = 15; skip <= 17; skip++)
-                std::cout << questions[skip] << "\n";
-            ico();
+                std::cout << questions[skip] << "\n"; //text
+            ico(); //answer
             if (a == '1')
-            {
+            { //overwrite
                 save.close();
                 std::ofstream save("save3.txt");
                 system("CLS");
@@ -1230,7 +1230,7 @@ void save_game()
                 save.close();
             }
             else
-                main_menu();
+                main_menu(); //return
         }
         ico();
         main_menu();
@@ -1248,23 +1248,23 @@ void save_game()
 }
 void load_game()
 {
-    system("CLS");
+    system("CLS"); //clear console
     for (int i = 10; i <= 14; i++)
-        std::cout << questions[i] << "\n";
-    ico();
-    system("CLS");
+        std::cout << questions[i] << "\n"; //text
+    ico(); //answer
+    system("CLS"); //clear console
     switch (a)
     {
     case '1':
     {
         std::ifstream save;
         save.open("save1.txt");
-        if (save.fail())
-        {
+        if (save.fail()) //check if file exists
+        { //if it doesn't
             std::cout << menu[11] << "\n" << menu[12] << "\n" << shop[81];
         }
         else
-        {
+        { //if it does
             std::cout << "Loading...";
             std::getline(save, b);
             pc.player_name = b;
@@ -1295,12 +1295,12 @@ void load_game()
     {
         std::ifstream save;
         save.open("save2.txt");
-        if (save.fail())
-        {
+        if (save.fail()) //check if file exists
+        { //if it doesn't
             std::cout << menu[11] << "\n" << menu[12] << "\n" << shop[81];
         }
         else
-        {
+        { //if it does
             std::cout << "Loading...";
             std::getline(save, b);
             pc.player_name = b;
@@ -1331,12 +1331,12 @@ void load_game()
     {
         std::ifstream save;
         save.open("save3.txt");
-        if (save.fail())
-        {
+        if (save.fail()) //check if file exists
+        { //if it doesn't
             std::cout << menu[11] << "\n" << menu[12] << "\n" << shop[81];
         }
         else
-        {
+        { //if it does
             std::cout << "Loading...";
             std::getline(save, b);
             pc.player_name = b;
@@ -1371,16 +1371,16 @@ void load_game()
     }
 }
 void nice_try()
-{
+{ //overflow function
     std::cout << "Nice try! The game will now close";
     ico();
     exit(0);
 }
 void buy_armor_h(armor x) //buy helmet function
 {
-    if (pc.current_gold >= x.price && x.DEF > equip.h_def)
+    if (pc.current_gold >= x.price && x.DEF > equip.h_def) //if you have gold and worse helmet
     {
-        pc.current_gold = pc.current_gold - x.price;
+        pc.current_gold = pc.current_gold - x.price; //change price
         equip.h_def = x.DEF;
         equip.head = x.name;
         system("CLS");
@@ -1390,14 +1390,14 @@ void buy_armor_h(armor x) //buy helmet function
     }
     else
     {
-        if (pc.current_gold < x.price)
+        if (pc.current_gold < x.price) //if you dont have money
         {
             system("CLS");
             std::cout << shop[78] << x.name << "\n" << shop[81];
             ico();
             buy_armor();
         }
-        else
+        else //if you have better helmet
         {
             system("CLS");
             std::cout << shop[83] << "\n" << shop[81];
@@ -1408,9 +1408,9 @@ void buy_armor_h(armor x) //buy helmet function
 }
 void buy_armor_c(armor x) //buy chestplate function
 {
-    if (pc.current_gold >= x.price && x.DEF > equip.c_def)
+    if (pc.current_gold >= x.price && x.DEF > equip.c_def) //if you have gold and worse chestplate
     {
-        pc.current_gold = pc.current_gold - x.price;
+        pc.current_gold = pc.current_gold - x.price; //change gold
         equip.c_def = x.DEF;
         equip.chest = x.name;
         system("CLS");
@@ -1420,7 +1420,7 @@ void buy_armor_c(armor x) //buy chestplate function
     }
     else
     {
-        if (pc.current_gold < x.price)
+        if (pc.current_gold < x.price) //if you dont have gold
         {
             system("CLS");
             std::cout << shop[78] << x.name << "\n" << shop[81];
@@ -1428,7 +1428,7 @@ void buy_armor_c(armor x) //buy chestplate function
             buy_armor();
         }
         else
-        {
+        { //if you have better chestplate
             system("CLS");
             std::cout << shop[83] << "\n" << shop[81];
             ico();
@@ -1438,9 +1438,9 @@ void buy_armor_c(armor x) //buy chestplate function
 }
 void buy_armor_p(armor x) //buy pants function
 {
-    if (pc.current_gold >= x.price && x.DEF > equip.p_def)
+    if (pc.current_gold >= x.price && x.DEF > equip.p_def) //if you have gold and worse pants
     {
-        pc.current_gold = pc.current_gold - x.price;
+        pc.current_gold = pc.current_gold - x.price; //change gold
         equip.p_def = x.DEF;
         equip.pants = x.name;
         system("CLS");
@@ -1450,7 +1450,7 @@ void buy_armor_p(armor x) //buy pants function
     }
     else
     {
-        if (pc.current_gold < x.price)
+        if (pc.current_gold < x.price) //if you dont have money
         {
             system("CLS");
             std::cout << shop[78] << x.name << "\n" << shop[81];
@@ -1458,7 +1458,7 @@ void buy_armor_p(armor x) //buy pants function
             buy_armor();
         }
         else
-        {
+        { //if you have better armor
             system("CLS");
             std::cout << shop[83] << "\n" << shop[81];
             ico();
@@ -1468,9 +1468,9 @@ void buy_armor_p(armor x) //buy pants function
 }
 void buy_armor_b(armor x) //buy boots function
 {
-    if (pc.current_gold >= x.price && x.DEF > equip.b_def)
+    if (pc.current_gold >= x.price && x.DEF > equip.b_def) //if you have gold and worse boots
     {
-        pc.current_gold = pc.current_gold - x.price;
+        pc.current_gold = pc.current_gold - x.price; //change gold
         equip.b_def = x.DEF;
         equip.boots = x.name;
         system("CLS");
@@ -1480,7 +1480,7 @@ void buy_armor_b(armor x) //buy boots function
     }
     else
     {
-        if (pc.current_gold < x.price)
+        if (pc.current_gold < x.price) //if you dont have gold
         {
             system("CLS");
             std::cout << shop[78] << x.name << "\n" << shop[81];
@@ -1488,7 +1488,7 @@ void buy_armor_b(armor x) //buy boots function
             buy_armor();
         }
         else
-        {
+        { //if you have better armor
             system("CLS");
             std::cout << shop[83] << "\n" << shop[81];
             ico();
@@ -1498,9 +1498,9 @@ void buy_armor_b(armor x) //buy boots function
 }
 void buy_main(weapon x)
 {
-    if (pc.current_gold >= x.price && x.ATK > equip.mw_atk)
+    if (pc.current_gold >= x.price && x.ATK > equip.mw_atk) //if you have gold and worse main weapon
     {
-        pc.current_gold = pc.current_gold - x.price;
+        pc.current_gold = pc.current_gold - x.price; //change gold
         equip.mw_atk = x.ATK;
         equip.mainweapon = x.name;
         system("CLS");
@@ -1510,7 +1510,7 @@ void buy_main(weapon x)
     }
     else
     {
-        if (pc.current_gold < x.price)
+        if (pc.current_gold < x.price) //if you dont have gold
         {
             system("CLS");
             std::cout << shop[78] << x.name << "\n" << shop[81];
@@ -1518,7 +1518,7 @@ void buy_main(weapon x)
             buy_main_hand();
         }
         else
-        {
+        { //if you have better weapon
             system("CLS");
             std::cout << shop[84] << "\n" << shop[81];
             ico();
@@ -1528,9 +1528,9 @@ void buy_main(weapon x)
 }
 void buy_off(weapon x)
 {
-    if (pc.current_gold >= x.price && x.ATK > equip.ow_atk)
+    if (pc.current_gold >= x.price && x.ATK > equip.ow_atk) //if you have gold and worse off weapon
     {
-        pc.current_gold = pc.current_gold - x.price;
+        pc.current_gold = pc.current_gold - x.price; //change gold
         equip.ow_atk = x.ATK;
         equip.offweapon = x.name;
         system("CLS");
@@ -1540,7 +1540,7 @@ void buy_off(weapon x)
     }
     else
     {
-        if (pc.current_gold < x.price)
+        if (pc.current_gold < x.price) //if you dont have gold
         {
             system("CLS");
             std::cout << shop[78] << x.name << "\n" << shop[81];
@@ -1548,7 +1548,7 @@ void buy_off(weapon x)
             buy_off_hand();
         }
         else
-        {
+        { //if you have better weapon
             system("CLS");
             std::cout << shop[84] << "\n" << shop[81];
             ico();
@@ -1558,7 +1558,7 @@ void buy_off(weapon x)
 }
 void buy_hp(item& x)
 {
-    if (pc.current_gold >= x.price)
+    if (pc.current_gold >= x.price) //if you have gold
     {
         pc.current_gold = pc.current_gold - x.price;
         x.number++;
@@ -1568,7 +1568,7 @@ void buy_hp(item& x)
         buy_health_potion();
     }
     else
-    {
+    { //if you dont have gold
         system("CLS");
         std::cout << shop[78] << x.name << "\n" << shop[81];
         ico();
@@ -1580,7 +1580,7 @@ int main()
     std::cout << "Loading...";
     SetConsoleTitleA("Recover your strength"); //set the title of the game
     srand((int)time(0)); //for randomness
-    system("CLS");
+    system("CLS"); // clear console
     languagechoice(); //language choice 
     read_language(a, language); //read the story and the questions
     name(); //get the name of the character
