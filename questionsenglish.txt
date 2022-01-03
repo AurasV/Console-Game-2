@@ -12,3 +12,6 @@ Choose the save slot you want to load from:
 2) Save Slot 2 
 3) Save Slot 3 
 0) Back 
+Save already exists, do you want to overwrite?
+1) Yes 
+2) No 

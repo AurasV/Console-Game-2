@@ -8,3 +8,5 @@ Alege ce vrei sa faci:
 6) Incarca jocul
 0) Iesi din joc
 Esti sigur ca vrei sa iesi? 
+Fisierul nu exista! 
+Iesind... 

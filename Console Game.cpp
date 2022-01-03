@@ -799,7 +799,6 @@ void buy_health_potion() //buy health potion
         break;
     }
 }
-//have to finish this ^
 void fight_action(enemy& current_enemy)
 {
     if (ok_fight_first == true)
@@ -834,15 +833,15 @@ void playercurrentstate(player& x) //output current player state
             std::cout << pc.player_name << char(39) << " current stats are:\nAttack: " << pc.ATK + equip_atk << "\nDefense: " << pc.DEF + equip_def << "\nTotal Health Point: " << pc.THP << "\nCurrent Health Points: " << pc.CHP << "\nLevel: " << pc.level << "\nGold: " << pc.current_gold << "\nXP: " << pc.current_xp << "\nXP Until Level Up: " << pc.xp_to_next_level - pc.current_xp << "\n" << "Helmet: " << equip.head << "\n" << "Chestplate: " << equip.chest << "\n" << "Pants: " << equip.pants << "\n" << "Boots: " << equip.boots << "\n"; //if the last letter is s
         else
             std::cout << pc.player_name << char(39) << "s current stats are:\nAttack: " << pc.ATK + equip_atk << "\nDefense: " << pc.DEF + equip_def << "\nTotal Health Point: " << pc.THP << "\nCurrent Health Points: " << pc.CHP << "\nLevel: " << pc.level << "\nGold: " << pc.current_gold << "\nXP: " << pc.current_xp << "\nXP Until Level Up: " << pc.xp_to_next_level - pc.current_xp << "\n" << "Helmet: " << equip.head << "\n" << "Chestplate: " << equip.chest << "\n" << "Pants: " << equip.pants << "\n" << "Boots: " << equip.boots << "\n"; //if the last letter isn't s
-        std::cout << "Press any key to continue.";
+        std::cout << shop[81];
         break;
     case 2: //if the language is romanian
         std::cout << "Statisticile Curente pentru " << pc.player_name << " sunt:\n" << "Atac: " << pc.ATK + equip_atk << "\nAparare: " << pc.DEF + equip_def << "\nPuncte de Viata Totale: " << pc.THP << "\nPuncte de Viata Curente: " << pc.CHP << "\nNivel: " << pc.level << "\nAur: " << pc.current_gold << "\nXP: " << pc.current_xp << "\nXP Pana la Cresterea Nivelului: " << pc.xp_to_next_level - pc.current_xp << "\n" << "Casca: " << equip.head << "\n" << "Platosa: " << equip.chest << "\n" << "Jambiere: " << equip.pants << "\n" << "Cizme: " << equip.boots << "\n"; //if the language is romanian
-        std::cout << "Apasa orice tasta pentru a continua.";
+        std::cout << shop[81];
         break;
     case 3: //if the language is hungarian
         std::cout << "Jelenlegi statisztikak " << pc.player_name << ":\n" << "Tamadas : " << pc.ATK + equip_atk << "\nVedekezes: " << pc.DEF + equip_def << "\nAz osszes eletero: " << pc.THP << "\nJelenlegi eletero: " << pc.CHP << "\nSzint: " << pc.level << "\nArany: " << pc.current_gold << "\nXP: " << pc.current_xp << "\nXP szukseges a szint lepeshez: " << pc.xp_to_next_level - pc.current_xp << "\n" << "Sisak: " << equip.head << "\n" << "Pancel: " << equip.chest << "\n" << "Nadrag: " << equip.pants << "\n" << "Csizma: " << equip.boots << "\n"; //if the language is hungarian
-        std::cout << "Press any key to continue. but hungarian";
+        std::cout << shop[81];
         break;
     }
     ico();
@@ -1100,7 +1099,7 @@ void main_menu()
         load_game();
         break;
     case '0':
-        std::cout << menu[10] << "\n" << questions[3] << "\n" << questions[4];
+        std::cout << menu[10] << "\n" << questions[3] << "\n" << questions[4] << "\n";
         ico();
         if (a == '1')
         {
@@ -1126,36 +1125,114 @@ void save_game()
     {
     case '1':
     {
-        std::ofstream save("save1.txt");
-        system("CLS");
-        std::cout << "Saving...";
-        save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
-        system("CLS");
-        std::cout << "Saved" << "\n" << shop[81];
+        std::ifstream save;
+        save.open("save1.txt");
+        if (save.fail())
+        {
+            save.close();
+            std::ofstream save("save1.txt");
+            system("CLS");
+            std::cout << "Saving...";
+            save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
+            system("CLS");
+            std::cout << "Saved" << "\n" << shop[81];
+            save.close();
+        }
+        else
+        {
+            for (int skip = 15; skip <= 17; skip++)
+                std::cout << questions[skip] << "\n";
+            ico();
+            if (a == '1')
+            {
+                save.close();
+                std::ofstream save("save1.txt");
+                system("CLS");
+                std::cout << "Saving...";
+                save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
+                system("CLS");
+                std::cout << "Saved" << "\n" << shop[81];
+                save.close();
+            }
+            else
+                main_menu();
+        }
         ico();
         main_menu();
         break;
     }
     case '2':
     {
-        std::ofstream save("save2.txt");
-        system("CLS");
-        std::cout << "Saving...";
-        save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
-        system("CLS");
-        std::cout << "Saved" << "\n" << shop[81];
+        std::ifstream save;
+        save.open("save2.txt");
+        if (save.fail())
+        {
+            save.close();
+            std::ofstream save("save2.txt");
+            system("CLS");
+            std::cout << "Saving...";
+            save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
+            system("CLS");
+            std::cout << "Saved" << "\n" << shop[81];
+            save.close();
+        }
+        else
+        {
+            for (int skip = 15; skip <= 17; skip++)
+                std::cout << questions[skip] << "\n";
+            ico();
+            if (a == '1')
+            {
+                save.close();
+                std::ofstream save("save2.txt");
+                system("CLS");
+                std::cout << "Saving...";
+                save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
+                system("CLS");
+                std::cout << "Saved" << "\n" << shop[81];
+                save.close();
+            }
+            else
+                main_menu();
+        }
         ico();
         main_menu();
         break;
     }
     case '3':
     {
-        std::ofstream save("save3.txt");
-        system("CLS");
-        std::cout << "Saving...";
-        save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
-        system("CLS");
-        std::cout << "Saved" << "\n" << shop[81];
+        std::ifstream save;
+        save.open("save3.txt");
+        if (save.fail())
+        {
+            save.close();
+            std::ofstream save("save3.txt");
+            system("CLS");
+            std::cout << "Saving...";
+            save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
+            system("CLS");
+            std::cout << "Saved" << "\n" << shop[81];
+            save.close();
+        }
+        else
+        {
+            for (int skip = 15; skip <= 17; skip++)
+                std::cout << questions[skip] << "\n";
+            ico();
+            if (a == '1')
+            {
+                save.close();
+                std::ofstream save("save3.txt");
+                system("CLS");
+                std::cout << "Saving...";
+                save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number;
+                system("CLS");
+                std::cout << "Saved" << "\n" << shop[81];
+                save.close();
+            }
+            else
+                main_menu();
+        }
         ico();
         main_menu();
         break;
@@ -1175,91 +1252,115 @@ void load_game()
 {
     system("CLS");
     for (int i = 10; i <= 14; i++)
-        std::cout << questions[i];
+        std::cout << questions[i] << "\n";
     ico();
     system("CLS");
     switch (a)
     {
     case '1':
     {
-        std::ifstream save("save1.txt");
-        std::cout << "Loading...";
-        std::getline(save, b);
-        pc.player_name = b;
-        save >> pc.ATK >> pc.DEF >> pc.THP >> pc.CHP;
-        save >> pc.level >> pc.current_gold >> pc.current_xp;
-        for (int saveskip = 1; saveskip <= 9; saveskip++)
+        std::ifstream save;
+        save.open("save1.txt");
+        if (save.fail())
+        {
+            std::cout << menu[11] << "\n" << menu[12] << "\n" << shop[81];
+        }
+        else
+        {
+            std::cout << "Loading...";
             std::getline(save, b);
-        std::getline(save, b);
-        b = equip.head;
-        std::getline(save, b);
-        b = equip.chest;
-        std::getline(save, b);
-        b = equip.pants;
-        std::getline(save, b);
-        b = equip.boots;
-        save >> equip.h_def >> equip.c_def >> equip.p_def >> equip.b_def;
-        save >> equip.mw_atk >> equip.ow_atk;
-        save >> bone.number >> gunpowder.number >> rotten_flesh.number >> iron_ingot.number;
-        save >> normal_hp.number >> greater_hp.number >> supreme_hp.number;
-        system("CLS");
-        std::cout << "Loaded!\n" << shop[81];
+            pc.player_name = b;
+            save >> pc.ATK >> pc.DEF >> pc.THP >> pc.CHP;
+            save >> pc.level >> pc.current_gold >> pc.current_xp;
+            for (int saveskip = 1; saveskip <= 9; saveskip++)
+                std::getline(save, b);
+            std::getline(save, b);
+            b = equip.head;
+            std::getline(save, b);
+            b = equip.chest;
+            std::getline(save, b);
+            b = equip.pants;
+            std::getline(save, b);
+            b = equip.boots;
+            save >> equip.h_def >> equip.c_def >> equip.p_def >> equip.b_def;
+            save >> equip.mw_atk >> equip.ow_atk;
+            save >> bone.number >> gunpowder.number >> rotten_flesh.number >> iron_ingot.number;
+            save >> normal_hp.number >> greater_hp.number >> supreme_hp.number;
+            system("CLS");
+            std::cout << "Loaded!\n" << shop[81];
+        }
         ico();
         main_menu();
         break;
     }
     case '2':
     {
-        std::ifstream save("save2.txt");
-        std::cout << "Loading...";
-        std::getline(save, b);
-        pc.player_name = b;
-        save >> pc.ATK >> pc.DEF >> pc.THP >> pc.CHP;
-        save >> pc.level >> pc.current_gold >> pc.current_xp;
-        for (int saveskip = 1; saveskip <= 9; saveskip++)
+        std::ifstream save;
+        save.open("save2.txt");
+        if (save.fail())
+        {
+            std::cout << menu[11] << "\n" << menu[12] << "\n" << shop[81];
+        }
+        else
+        {
+            std::cout << "Loading...";
             std::getline(save, b);
-        std::getline(save, b);
-        b = equip.head;
-        std::getline(save, b);
-        b = equip.chest;
-        std::getline(save, b);
-        b = equip.pants;
-        std::getline(save, b);
-        b = equip.boots;
-        save >> equip.h_def >> equip.c_def >> equip.p_def >> equip.b_def;
-        save >> equip.mw_atk >> equip.ow_atk;
-        save >> bone.number >> gunpowder.number >> rotten_flesh.number >> iron_ingot.number;
-        save >> normal_hp.number >> greater_hp.number >> supreme_hp.number;
-        system("CLS");
-        std::cout << "Loaded!\n" << shop[81];
+            pc.player_name = b;
+            save >> pc.ATK >> pc.DEF >> pc.THP >> pc.CHP;
+            save >> pc.level >> pc.current_gold >> pc.current_xp;
+            for (int saveskip = 1; saveskip <= 9; saveskip++)
+                std::getline(save, b);
+            std::getline(save, b);
+            b = equip.head;
+            std::getline(save, b);
+            b = equip.chest;
+            std::getline(save, b);
+            b = equip.pants;
+            std::getline(save, b);
+            b = equip.boots;
+            save >> equip.h_def >> equip.c_def >> equip.p_def >> equip.b_def;
+            save >> equip.mw_atk >> equip.ow_atk;
+            save >> bone.number >> gunpowder.number >> rotten_flesh.number >> iron_ingot.number;
+            save >> normal_hp.number >> greater_hp.number >> supreme_hp.number;
+            system("CLS");
+            std::cout << "Loaded!\n" << shop[81];
+        }
         ico();
         main_menu();
         break;
     }
     case '3':
     {
-        std::ifstream save("save3.txt");
-        std::cout << "Loading...";
-        std::getline(save, b);
-        pc.player_name = b;
-        save >> pc.ATK >> pc.DEF >> pc.THP >> pc.CHP;
-        save >> pc.level >> pc.current_gold >> pc.current_xp;
-        for (int saveskip = 1; saveskip <= 9; saveskip++)
+        std::ifstream save;
+        save.open("save3.txt");
+        if (save.fail())
+        {
+            std::cout << menu[11] << "\n" << menu[12] << "\n" << shop[81];
+        }
+        else
+        {
+            std::cout << "Loading...";
             std::getline(save, b);
-        std::getline(save, b);
-        b = equip.head;
-        std::getline(save, b);
-        b = equip.chest;
-        std::getline(save, b);
-        b = equip.pants;
-        std::getline(save, b);
-        b = equip.boots;
-        save >> equip.h_def >> equip.c_def >> equip.p_def >> equip.b_def;
-        save >> equip.mw_atk >> equip.ow_atk;
-        save >> bone.number >> gunpowder.number >> rotten_flesh.number >> iron_ingot.number;
-        save >> normal_hp.number >> greater_hp.number >> supreme_hp.number;
-        system("CLS");
-        std::cout << "Loaded!\n" << shop[81];
+            pc.player_name = b;
+            save >> pc.ATK >> pc.DEF >> pc.THP >> pc.CHP;
+            save >> pc.level >> pc.current_gold >> pc.current_xp;
+            for (int saveskip = 1; saveskip <= 9; saveskip++)
+                std::getline(save, b);
+            std::getline(save, b);
+            b = equip.head;
+            std::getline(save, b);
+            b = equip.chest;
+            std::getline(save, b);
+            b = equip.pants;
+            std::getline(save, b);
+            b = equip.boots;
+            save >> equip.h_def >> equip.c_def >> equip.p_def >> equip.b_def;
+            save >> equip.mw_atk >> equip.ow_atk;
+            save >> bone.number >> gunpowder.number >> rotten_flesh.number >> iron_ingot.number;
+            save >> normal_hp.number >> greater_hp.number >> supreme_hp.number;
+            system("CLS");
+            std::cout << "Loaded!\n" << shop[81];
+        }
         ico();
         main_menu();
         break;
@@ -1498,6 +1599,7 @@ int main()
     //tests(); //tests function
     //playercurrentstate(pc);
     std::cin >> test;
+    system("CLS");
     if (test == true)
     {
         bone.number = 200;

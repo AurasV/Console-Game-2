@@ -8,3 +8,5 @@ Choose what you want to do:
 6) Load game 
 0) Quit game 
 Are you sure you want to quit? 
+File doesn't exist! 
+Exiting... 
