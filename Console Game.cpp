@@ -824,7 +824,7 @@ void playercurrentstate(player& x) //output current player state
 {
     int equip_def = equip.h_def + equip.c_def + equip.p_def + equip.b_def;
     int equip_atk = equip.mw_atk + equip.ow_atk;
-    //system("CLS");
+    system("CLS");
     p = pc.player_name.length() - 1; //i dont really remember why this is here
     switch (language)
     {
@@ -847,7 +847,6 @@ void playercurrentstate(player& x) //output current player state
     ico();
     main_menu();
 }
-//have to add system clear before final production ^
 void enemy_stats(enemy& x) //output enemy stats
 {
     //system("CLS");
@@ -1247,7 +1246,6 @@ void save_game()
     std::cout << "Saving...";
     
 }
-//have to finish this ^
 void load_game()
 {
     system("CLS");
@@ -1372,7 +1370,6 @@ void load_game()
     }
     }
 }
-//have to finish this ^
 void nice_try()
 {
     std::cout << "Nice try! The game will now close";
