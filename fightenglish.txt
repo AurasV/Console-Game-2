@@ -16,6 +16,11 @@ xp and
 Successfully escaped! 
 You didn't escape! 
 You have: 
-Normal Health Potion
-Greater Health Potion
-Supreme Health Potion
+1) Normal Health Potion +10 hp - 
+2) Greater Health Potion +20 hp - 
+3) Supreme Health Potion +30 hp - 
+0) Go back 
+What do you want to use? 
+You already are full hp! 
+You don't have any: 
+You current hp is - 

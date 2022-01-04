@@ -45,7 +45,7 @@ std::string b, first_name, last_name, c, story[100], questions[100], d, ar, figh
 int i, language, j, k, r, enemy_number, e, item_number, p, weapon_number, armor_number, death_number;
 int day = 1;
 char a; //player input variable
-bool ok_name = false, ok_fight_first = true, ok_access_shop = false, test;
+bool ok_name = false, ok_fight_first = true, ok_access_shop = false, test, enemy_dead = false;
 struct player //player
 {
     std::string player_name = { " " }; //player name
@@ -152,6 +152,7 @@ void buy_off(weapon x); //buy off weapon function
 void buy_hp(item& x); //buy health potion function
 void try_to_run(enemy& x); //try to run function
 void attack_enemy(enemy& x); //attack enemy function
+void use_health(enemy& x); //use health function
 void languagechoice() //language choice
 {
     std::cout << "Choose a language.\nAlege limba.\nValassz nyelvet.\n\n\n1)English/Engleza/Angol\n2)Romana/Romanian/Roman\n3)Magyar/Maghiara/Hungarian\n";
@@ -804,6 +805,8 @@ void buy_health_potion() //buy health potion
 void fight_action(enemy& current_enemy)
 {
     system("CLS");
+    if (enemy_dead == true);
+        //what to do if the enemy died
     if (ok_fight_first == true) 
     {
         std::cout << fight[1] << " " << current_enemy.enemy_name << "\n"; //you've been attacked by on the first run
@@ -813,6 +816,7 @@ void fight_action(enemy& current_enemy)
     std::cout << current_enemy.enemy_name << fight[3] << current_enemy.CHP << fight[4];
     for (int text = 5; text <= 9; text++)
         std::cout << fight[text] << "\n"; //text
+    std::cout << fight[26] << pc.CHP << "\n";
     ico();
     switch (a)
     {
@@ -820,7 +824,7 @@ void fight_action(enemy& current_enemy)
         attack_enemy(current_enemy);
         break;
     case '2':
-        //use health potion function goes here
+        use_health(current_enemy);
         break;
     case '3':
         enemy_stats(current_enemy);
@@ -913,18 +917,109 @@ void try_to_run(enemy& x)//atempt to run from a fight
 
 }
 void attack_enemy(enemy& x)
-{
+{ //attack the enemy
     int damage = pc.ATK + equip.mw_atk + equip.ow_atk - x.DEF; //default damage
     int crit = (rand() % 100) + 1; //randomness
     int random_bonus(rand() % 5 + 1); //random damage bonus
-    damage += random_bonus;
-    if (crit >= 95)
+    int random_debuff(rand() % 5 + 1); //random damage debuff
+    damage += random_bonus; //add damage bonus
+    damage -= random_debuff; //substract damage debuff
+    if (crit > 95) //crit
         damage *= 2;
+    x.CHP = x.CHP - damage; //change enemy hp
+    if (x.CHP <= 0)
+        enemy_dead = true;
     std::cout << fight[10] << damage << fight[11] << "\n" << shop[81];
     ico();
     fight_action(x);
 }
 //have to finish this ^
+void use_health(enemy& x)
+{
+    system("CLS");
+    std::cout << fight[18] << "\n";
+    std::cout << fight[19] << normal_hp.number << "\n";
+    std::cout << fight[20] << greater_hp.number << "\n";
+    std::cout << fight[21] << supreme_hp.number << "\n";
+    std::cout << fight[22] << "\n" << fight[23] << "\n";
+    ico();
+    switch (a)
+    {
+    case '1':
+        if (pc.CHP == pc.THP)
+        {
+            std::cout << fight[24] << "\n" << shop[81];
+            ico();
+            use_health(x);
+        }
+        if (normal_hp.number > 0)
+        {
+            normal_hp.number--;
+            pc.CHP += 10;
+            if (pc.THP < pc.CHP)
+                pc.CHP = pc.THP;
+            use_health(x);
+        }
+        else
+        {
+            std::cout << fight[25] << normal_hp.name << "\n" << shop[81];
+            ico();
+            use_health(x);
+        }
+        break;
+    case '2':
+        if (pc.CHP == pc.THP)
+        {
+            std::cout << fight[24] << "\n" << shop[81];
+            ico();
+            use_health(x);
+        }
+        if (greater_hp.number > 0)
+        {
+            greater_hp.number--;
+            pc.CHP += 20;
+            if (pc.THP < pc.CHP)
+                pc.CHP = pc.THP;
+            use_health(x);
+        }
+        else
+        {
+            std::cout << fight[25] << greater_hp.name << "\n" << shop[81];
+            ico();
+            use_health(x);
+        }
+        break;
+    case '3':
+        if (pc.CHP == pc.THP)
+        {
+            std::cout << fight[24] << "\n" << shop[81];
+            ico();
+            use_health(x);
+        }
+        if (supreme_hp.number > 0)
+        {
+            supreme_hp.number--;
+            pc.CHP += 30;
+            if (pc.THP < pc.CHP)
+                pc.CHP = pc.THP;
+            use_health(x);
+        }
+        else
+        {
+            std::cout << fight[25] << supreme_hp.name << "\n" << shop[81];
+            ico();
+            use_health(x);
+        }
+        break;
+    case '0':
+        fight_action(x);
+        break;
+    default:
+        std::cout << shop[79] << "\n";
+        use_health(x);
+        break;
+    }
+}
 void weapons(weapon& x) //read weapon from file
 {
     std::ifstream weaponstxt("weapons.txt");
@@ -1136,6 +1231,7 @@ void main_menu()
     {
     case '1': //find enemy
         ok_fight_first = true;
+        enemy_dead = false;
         fight_enemy_generate(current_enemy);
         fight_action(current_enemy);
         break;
@@ -1658,6 +1754,7 @@ int main()
     //playercurrentstate(pc);
     std::cin >> test;
     system("CLS");
+    pc.CHP = 1;
     if (test == true)
     {
         bone.number = 200;

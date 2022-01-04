@@ -16,6 +16,10 @@ XP-t es
 Successfully escaped! but hungarian 
 You didn't escape! but hungarian 
 You have: but hungarian 
-Normal Gyogyelixir - 
-Remek Gyogyelixir - 
-Rendkivuli Elixir - 
+1) Normal Gyogyelixir - 
+2) Remek Gyogyelixir - 
+3) Rendkivuli Elixir - 
+0) Vissza 
+What do you want to use? but hungarian
+You already are full hp! but hungarian
+You don't have any: but hungarian
