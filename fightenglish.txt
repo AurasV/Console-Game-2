@@ -12,7 +12,7 @@ You did
 You lost the battle.
 You won! Congratulations!
 You gained 
-xp and
+xp and 
 Successfully escaped! 
 You didn't escape! 
 You have: 
@@ -24,3 +24,4 @@ What do you want to use?
 You already are full hp! 
 You don't have any: 
 You current hp is - 
+Congratulations! You leveled up to level 
