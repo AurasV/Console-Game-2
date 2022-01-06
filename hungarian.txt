@@ -11,3 +11,5 @@ Erd al 25. szintet ahoz hogy legyozdhesd az ellensegeidet.
 A boltban eszkozoket/pancelt/fegyvereket vehetsz, amik segitenek az utadon. 
 Miutan legyoztel egy ellenseget, XP-t es eszkozoket nyersz, amiket eladhatsz a boltban. 
 Would you like to see the story? but hungarian 
+1) Igen 
+2) Nem 

@@ -57,12 +57,12 @@ Valassz fo fegyvert:
 4) Gyemant kard +4 tamadas -400A 
 5) Netherita kard +5 tamadas -500A 
 0) Vissza 
-Valasz masodlagos fegyvert:
+Valassz masodlagos fegyvert:
 1) Ij +3 tamadas -300A 
 2) Szamszerij +4 tamadas -400A 
 3) Szigony +5 tamadas -500A 
 0) Vissza 
-What type of potion would you like to buy? Milyen tipusu bajitalt szeretnel? 
+Milyen tipusu bajitalt szeretnel? 
 1) Normal gyogyelixir - 10Hp-t regeneral vissza -10A 
 2) Remek gyogyelixir - 20Hp-t regeneral vissza -20A 
 3) Rendkivuli elixir - 30Hp-t regeneral vissza -30A 

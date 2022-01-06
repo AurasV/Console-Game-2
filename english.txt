@@ -11,3 +11,5 @@ Get to level 25 by defeating enemies.
 You can buy items/armors/weapons at the shop that will help in your battles.
 Every time you defeat an enemy, you'll gain some xp and drops you can sell.
 Would you like to see the story?
+1) Yes 
+2) No 

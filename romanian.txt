@@ -11,3 +11,5 @@ Obtine nivelul 25 invingand inamici.
 Poti sa cumperi iteme/armuri/arme la magazin pentru a te ajuta in lupte.
 De fiecare data cand invingi un inamic o sa primesti xp si posibil loot ce poate fi vandut.
 Vrei sa vezi povestea? 
+1) Da 
+2) Nu 
