@@ -13,3 +13,5 @@ De fiecare data cand invingi un inamic o sa primesti xp si posibil loot ce poate
 Vrei sa vezi povestea? 
 1) Da 
 2) Nu 
+Felicitari, ai terminat jocul! 
+Jocul se va sinucide daca apesi orice tasta. 

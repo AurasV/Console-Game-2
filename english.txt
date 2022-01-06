@@ -13,3 +13,5 @@ Every time you defeat an enemy, you'll gain some xp and drops you can sell.
 Would you like to see the story?
 1) Yes 
 2) No 
+Congratulations you finished the game! 
+The game will now kill itself if you press any key. 

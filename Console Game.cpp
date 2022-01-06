@@ -159,6 +159,7 @@ void ask_out_story(); //ask if you want story function
 void enemy_action(enemy& x); //enemy action function
 void lose_battle(); //lose battle function
 void ask_out_story(); //ask story function
+void finish_game(); //finish game function
 void languagechoice() //language choice
 {
     std::cout << "Choose a language.\nAlege limba.\nValassz nyelvet.\n\n\n1)English/Engleza/Angol\n2)Romana/Romanian/Roman\n3)Magyar/Maghiara/Hungarian\n";
@@ -944,6 +945,8 @@ void dead_enemy(enemy& x)
 void level_up(player& pc)
 {
     pc.level++;
+    if (pc.level == 25)
+        finish_game();
     if (pc.current_xp > pc.xp_for_next_level)
         pc.current_xp = pc.current_xp - pc.xp_for_next_level;
     else
@@ -956,6 +959,13 @@ void level_up(player& pc)
     std::cout << fight[27] << pc.level << "\n" << shop[81];
     ico();
     main_menu();
+}
+void finish_game()
+{
+    system("CLS");
+    std::cout << story[16] << "\n" << story[17] << "\n";
+    ico();
+    exit(0);
 }
 void enemy_stats(enemy& x) //output enemy stats
 {

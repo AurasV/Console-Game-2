@@ -13,3 +13,5 @@ Miutan legyoztel egy ellenseget, XP-t es eszkozoket nyersz, amiket eladhatsz a b
 Would you like to see the story? but hungarian 
 1) Igen 
 2) Nem 
+Congratulations you finished the game! but hungarian 
+The game will now kill itself if you press any key. but hungarian 
