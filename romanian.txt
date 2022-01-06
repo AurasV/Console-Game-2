@@ -14,4 +14,8 @@ Vrei sa vezi povestea?
 1) Da 
 2) Nu 
 Felicitari, ai terminat jocul! 
-Jocul se va sinucide daca apesi orice tasta. 
+Ti-au trebuit: 
+ zile.
+Ai pierdut: 
+ batalii.
+Jocul se va inchide daca apesi orice tasta. 

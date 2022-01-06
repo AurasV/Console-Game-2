@@ -14,4 +14,8 @@ Would you like to see the story? but hungarian
 1) Igen 
 2) Nem 
 Congratulations you finished the game! but hungarian 
+You needed: 
+ days. but hungarian
+You lost: 
+ fights. but hungarian
 The game will now kill itself if you press any key. but hungarian 

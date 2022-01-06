@@ -963,7 +963,7 @@ void level_up(player& pc)
 void finish_game()
 {
     system("CLS");
-    std::cout << story[16] << "\n" << story[17] << "\n";
+    std::cout << story[16] << "\n" << story[17] << day << story[18] << "\n" << story[19] << lost_fights << story[20] << "\n" << story[21];
     ico();
     exit(0);
 }
@@ -1800,8 +1800,6 @@ int main()
     readfight(); //read all fight text
     readmenu(); //read all menu text
     system("CLS"); //clear console
-    //tests(); //tests function
-    //playercurrentstate(pc)
-    ask_out_story();
+    ask_out_story(); //ask if the player wants the story or not
     return 0;
 }

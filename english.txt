@@ -14,4 +14,8 @@ Would you like to see the story?
 1) Yes 
 2) No 
 Congratulations you finished the game! 
+You needed: 
+ days.
+You lost: 
+ fights.
 The game will now kill itself if you press any key. 
