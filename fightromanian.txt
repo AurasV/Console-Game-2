@@ -22,3 +22,9 @@ Potiune de Viata Suprema -
 Ce vrei sa folosesti? 
 Deja ai hp complet! 
 Nu ai: 
+Felicitari! Ai crescut la nivelul - 
+ te-a atacat!
+Ti-a dat 
+ damage. 
+Ai pierdut batalia!
+Ai fugit intr-un loc sigur, abia scapand.

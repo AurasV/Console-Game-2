@@ -23,3 +23,9 @@ You have: but hungarian
 What do you want to use? but hungarian
 You already are full hp! but hungarian
 You don't have any: but hungarian
+Congratulations! You leveled up to level but hungarian - 
+ attacked you! but hungarian 
+It did but hungarian 
+ damage. but hungarian 
+You lost the battle! but hungarian 
+You ran back to safety, barely escaping. but hungarian 
