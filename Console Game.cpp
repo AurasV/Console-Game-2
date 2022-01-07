@@ -48,7 +48,8 @@ int day = 1;
 char a; //player input variable
 bool ok_name = false, ok_fight_first = true, ok_access_shop = false, test, enemy_dead = false, action_done = false;
 int lost_fights = 0;
-std::string string_ascii[780];
+int min_enemy_ascii, max_enemy_ascii;
+std::string string_ascii[1000];
 struct player //player
 {
     std::string player_name = { " " }; //player name
@@ -816,13 +817,14 @@ void fight_action(enemy& current_enemy)
 {
     system("CLS");
     if (enemy_dead == true)
-        dead_enemy(current_enemy);
-        //what to do if the enemy died
+        dead_enemy(current_enemy); //what to do if the enemy died
     if (action_done == true)
     {
         action_done = false;
         enemy_action(current_enemy);
     }
+    for (int e = min_enemy_ascii; e <= max_enemy_ascii; e++)
+        std::cout << string_ascii[e] << "\n";
     if (ok_fight_first == true) 
     {
         std::cout << fight[1] << " " << current_enemy.enemy_name << "\n"; //you've been attacked by on the first run
@@ -885,15 +887,35 @@ void fight_enemy_generate(enemy& current_enemy) //generate enemy
 {
     int r = (rand() % 100) + 1; //get random number
     if (r <= 32)
+    {
+        min_enemy_ascii = 401;
+        max_enemy_ascii = 467;
         current_enemy = zombie; //32% chance of zombie
+    }
     if (r > 32 && r <= 64)
-        current_enemy = skeleton; //32% chance of zombie
+    {
+        min_enemy_ascii = 535;
+        max_enemy_ascii = 608;
+        current_enemy = skeleton; //32% chance of skeleton
+    }
     if (r > 64 && r <= 96)
+    {
+        min_enemy_ascii = 468;
+        max_enemy_ascii = 534;
         current_enemy = husk; //32% chance of husk
+    }
     if (r > 96 && r <= 98)
+    {
+        min_enemy_ascii = 609;
+        max_enemy_ascii = 690;
         current_enemy = creeper; //2% chance of creeper
+    }
     if (r > 98 && r <= 100)
+    {
+        min_enemy_ascii = 691;
+        max_enemy_ascii = 765;
         current_enemy = iron_golem; //2% chance of iron_golem
+    }
 }
 void playercurrentstate(player& x) //output current player state
 {
@@ -1335,7 +1357,9 @@ void save_game()
                 std::cout << string_ascii[e] << "\n";
             save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << pc.xp_for_next_level << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n";
             system("CLS");
-            std::cout << "Saved" << "\n" << shop[81];
+            for (int e = 779; e <= 794; e++)
+                std::cout << string_ascii[e] << "\n";
+            std::cout << shop[81];
             save.close();
         }
         else
@@ -1352,7 +1376,9 @@ void save_game()
                     std::cout << string_ascii[e] << "\n";
                 save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << pc.xp_for_next_level << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n";
                 system("CLS");
-                std::cout << "Saved" << "\n" << shop[81];
+                for (int e = 779; e <= 794; e++)
+                    std::cout << string_ascii[e] << "\n";
+                std::cout << shop[81];
                 save.close();
             }
             else //return 
@@ -1375,7 +1401,9 @@ void save_game()
                 std::cout << string_ascii[e] << "\n";
             save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << pc.xp_for_next_level << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n";
             system("CLS");
-            std::cout << "Saved" << "\n" << shop[81];
+            for (int e = 779; e <= 794; e++)
+                std::cout << string_ascii[e] << "\n";
+            std::cout << shop[81];
             save.close();
         }
         else
@@ -1392,7 +1420,9 @@ void save_game()
                     std::cout << string_ascii[e] << "\n";
                 save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << pc.xp_for_next_level << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n";
                 system("CLS");
-                std::cout << "Saved" << "\n" << shop[81];
+                for (int e = 779; e <= 794; e++)
+                    std::cout << string_ascii[e] << "\n";
+                std::cout << shop[81];
                 save.close();
             }
             else
@@ -1415,7 +1445,9 @@ void save_game()
                 std::cout << string_ascii[e] << "\n";
             save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << pc.xp_for_next_level << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n";
             system("CLS");
-            std::cout << "Saved" << "\n" << shop[81];
+            for (int e = 779; e <= 794; e++)
+                std::cout << string_ascii[e] << "\n";
+            std::cout << shop[81];
             save.close();
         }
         else
@@ -1432,7 +1464,9 @@ void save_game()
                     std::cout << string_ascii[e] << "\n";
                 save << pc.player_name << "\n" << pc.ATK << "\n" << pc.DEF << "\n" << pc.THP << "\n" << pc.CHP << "\n" << pc.level << "\n" << pc.current_gold << "\n" << pc.current_xp << "\n" << pc.xp_for_next_level << "\n" << bone.number << "\n" << gunpowder.number << "\n" << rotten_flesh.number << "\n" << iron_ingot.number << "\n" << normal_hp.number << "\n" << greater_hp.number << "\n" << supreme_hp.number << "\n" << equip.h_def << "\n" << equip.c_def << "\n" << equip.p_def << "\n" << equip.b_def << "\n" << equip.mw_atk << "\n" << equip.ow_atk << "\n" << equip.head << "\n" << equip.chest << "\n" << equip.pants << "\n" << equip.boots << "\n";
                 system("CLS");
-                std::cout << "Saved" << "\n" << shop[81];
+                for (int e = 779; e <= 794; e++)
+                    std::cout << string_ascii[e] << "\n";
+                std::cout << shop[81];
                 save.close();
             }
             else
@@ -1716,6 +1750,15 @@ void buy_main(weapon x)
         equip.mw_atk = x.ATK;
         equip.mainweapon = x.name;
         system("CLS");
+        if (x.price == 100 || x.price == 200)
+            for (int e = 1; e <= 40; e++)
+                std::cout << string_ascii[e] << "\n";
+        if (x.price == 300 || x.price == 400)
+            for (int e = 41; e <= 80; e++)
+                std::cout << string_ascii[e] << "\n";
+        if (x.price == 500)
+            for (int e = 81; e <= 120; e++)
+                std::cout << string_ascii[e] << "\n";
         std::cout << shop[82] << x.name << "\n" << shop[81];
         ico();
         buy_main_hand();
@@ -1746,6 +1789,15 @@ void buy_off(weapon x)
         equip.ow_atk = x.ATK;
         equip.offweapon = x.name;
         system("CLS");
+        if (x.price == 300)
+            for (int e = 124; e <= 160; e++)
+                std::cout << string_ascii[e] << "\n";
+        if (x.price == 400)
+            for (int e = 161; e <= 198; e++)
+                std::cout << string_ascii[e] << "\n";
+        if (x.price == 500)
+            for (int e = 206; e <= 238; e++)
+                std::cout << string_ascii[e] << "\n";
         std::cout << shop[82] << x.name << shop[81];
         ico();
         buy_off_hand();
@@ -1806,7 +1858,7 @@ void ask_out_story()
 void readascii()
 {
     int e;
-    for (e = 1; e <= 778; e++)
+    for (e = 1; e < 1000; e++)
     {
         std::getline(ascii, b);
         string_ascii[e] = b;
