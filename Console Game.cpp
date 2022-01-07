@@ -49,7 +49,7 @@ char a; //player input variable
 bool ok_name = false, ok_fight_first = true, ok_access_shop = false, test, enemy_dead = false, action_done = false;
 int lost_fights = 0;
 int min_enemy_ascii, max_enemy_ascii;
-std::string string_ascii[1000];
+std::string string_ascii[801];
 struct player //player
 {
     std::string player_name = { " " }; //player name
@@ -823,8 +823,6 @@ void fight_action(enemy& current_enemy)
         action_done = false;
         enemy_action(current_enemy);
     }
-    for (int e = min_enemy_ascii; e <= max_enemy_ascii; e++)
-        std::cout << string_ascii[e] << "\n";
     if (ok_fight_first == true) 
     {
         std::cout << fight[1] << " " << current_enemy.enemy_name << "\n"; //you've been attacked by on the first run
@@ -835,6 +833,8 @@ void fight_action(enemy& current_enemy)
     for (int text = 5; text <= 9; text++)
         std::cout << fight[text] << "\n"; //text
     std::cout << fight[26] << pc.CHP << "\n";
+    for (int e = min_enemy_ascii; e <= max_enemy_ascii; e++)
+        std::cout << string_ascii[e] << "\n";
     ico();
     switch (a)
     {
@@ -1844,34 +1844,43 @@ void ask_out_story()
     system("CLS");
     std::cout << story[13] << "\n" << story[14] << "\n" << story[15] << "\n";
     ico();
-    if (a == '1')
+    switch (a)
     {
+    case '1':
         for (int story_int = 2; story_int <= 12; story_int++)
             std::cout << story[story_int] << "\n";
         std::cout << shop[81];
         ico();
         main_menu();
-    }
-    else
+    case '2':
         main_menu();
+    default:
+        ask_out_story();
+    }
 }
 void readascii()
 {
     int e;
-    for (e = 1; e < 1000; e++)
+    for (e = 1; e < 800; e++)
     {
         std::getline(ascii, b);
         string_ascii[e] = b;
     }
     ascii.close();
 }
-int main()
-{
-    readascii(); //read ascii stuff
-    HWND console = GetConsoleWindow();
-    RECT r;
-    GetWindowRect(console, &r); //stores the console's current dimensions
-    MoveWindow(console, r.left, r.top, 800, 700, TRUE); //change console position and size
+void main()
+{ 
+    ::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000); //fullscreen
+    CONSOLE_FONT_INFOEX cfi;
+    cfi.cbSize = sizeof(cfi);
+    cfi.nFont = 0;
+    cfi.dwFontSize.X = 0;                   // Width of each character in the font
+    cfi.dwFontSize.Y = 24;                  // Height
+    cfi.FontFamily = FF_DONTCARE;
+    cfi.FontWeight = FW_NORMAL;
+    std::wcscpy(cfi.FaceName, L"Consolas"); // Choose your font
+    SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+    readascii(); //reads all ascii stuff
     for (int e = 767; e <= 778; e++)
         std::cout << string_ascii[e] << "\n"; //loading screen
     SetConsoleTitleA("Recover your strength"); //set the title of the game
@@ -1889,8 +1898,6 @@ int main()
     readshop(); //read all shop test
     readfight(); //read all fight text
     readmenu(); //read all menu text
-    pc.current_gold = 10000;
     system("CLS"); //clear console
     ask_out_story(); //ask if the player wants the story or not
-    return 0;
 }
