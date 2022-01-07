@@ -141,6 +141,15 @@
   <ItemGroup>
     <ClCompile Include="Console Game.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\sword.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Console Game.rc" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

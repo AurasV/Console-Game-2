@@ -41,12 +41,14 @@ std::ifstream shopenglish("shopenglish.txt"); //english version of the shop
 std::ifstream menuenglish("menuenglish.txt"); //english version of the menu
 std::ifstream menuromanian("menuromanian.txt"); //romanian version of the menu
 std::ifstream menuhungarian("menuhungarian.txt"); //hungarian version of the menu
+std::ifstream ascii("ascii images.txt"); //text file containing ascii art for everything
 std::string b, first_name, last_name, c, story[100], questions[100], d, ar, fight[100],shop[100],menu[100];
 int i, language, j, k, r, enemy_number, e, item_number, p, weapon_number, armor_number, death_number;
 int day = 1;
 char a; //player input variable
 bool ok_name = false, ok_fight_first = true, ok_access_shop = false, test, enemy_dead = false, action_done = false;
 int lost_fights = 0;
+std::string string_ascii[767];
 struct player //player
 {
     std::string player_name = { " " }; //player name
@@ -160,6 +162,7 @@ void enemy_action(enemy& x); //enemy action function
 void lose_battle(); //lose battle function
 void ask_out_story(); //ask story function
 void finish_game(); //finish game function
+void readascii(); //read ascii stuff function
 void languagechoice() //language choice
 {
     std::cout << "Choose a language.\nAlege limba.\nValassz nyelvet.\n\n\n1)English/Engleza/Angol\n2)Romana/Romanian/Roman\n3)Magyar/Maghiara/Hungarian\n";
@@ -857,9 +860,9 @@ void enemy_action(enemy& x)
     int random_debuff = (rand() % 3) + 1;
     int damage = (rand() % (3 * pc.level)) + 1;
     damage = damage + random_buff - random_debuff - int(sqrt(pc.DEF));
-    pc.CHP -= damage;
     if (damage <= 0)
         damage = 1;
+    pc.CHP -= damage;
     std::cout << x.enemy_name << fight[28] << "\n" << fight[29] << damage << fight[30] << "\n" << shop[81];
     ico();
     if (pc.CHP <= 0)
@@ -1782,6 +1785,16 @@ void ask_out_story()
     else
         main_menu();
 }
+void readascii()
+{
+    int e;
+    for (e = 1; e <= 766; e++)
+    {
+        std::getline(ascii, b);
+        string_ascii[e] = b;
+    }
+    ascii.close();
+}
 int main()
 {
     std::cout << "Loading...";
@@ -1799,6 +1812,7 @@ int main()
     readshop(); //read all shop test
     readfight(); //read all fight text
     readmenu(); //read all menu text
+    readascii();
     system("CLS"); //clear console
     ask_out_story(); //ask if the player wants the story or not
     return 0;
