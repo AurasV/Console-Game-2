@@ -47,20 +47,12 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// PNG
-//
-
-IDB_PNG1                PNG                     "C:\\Users\\auras\\Desktop\\sword.png"
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // Icon
 //
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON1               ICON                    "C:\\Users\\auras\\Desktop\\sword.ico"
+IDI_ICON3               ICON                    "sword.ico"
 
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
