@@ -1,30 +1,32 @@
 Ai fost atacat de: 
 Te lupti cu: 
-are 
-hp
+ are 
+ hp
 Alege ce vrei sa faci: 
 1) Ataca
 2) Foloseste o potiune de viata
-3) Incearca sa fugi
+3) Verifica status inamic
 0) Incearca sa fugi
 Ai dat 
-damage.
+ damage.
 Ai pierdut batalia.
 Ai castigat! Felicitari!
 Ai primit 
-xp si
+xp si 
 Ai scapat cu succes! 
 Nu ai reusit sa scapi! 
 Ai: 
-Potiune de Viata Normala - 
-Potiune de Viata Superioara - 
-Potiune de Viata Suprema - 
+1) Potiune de Viata Normala +10 hp - 
+2) Potiune de Viata Superioara +20 hp - 
+3) Potiune de Viata Suprema +30 hp - 
+0) Inapoi
 Ce vrei sa folosesti? 
 Deja ai hp complet! 
 Nu ai: 
-Felicitari! Ai crescut la nivelul - 
+Hpu-l tau curent este - 
  te-a atacat!
 Ti-a dat 
  damage. 
 Ai pierdut batalia!
 Ai fugit intr-un loc sigur, abia scapand.
+Felicitari! Ai crescut la nivelul - 

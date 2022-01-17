@@ -829,7 +829,7 @@ void fight_action(enemy& current_enemy)
         ok_fight_first = false;
     }
     else std::cout << fight[2] << " " << current_enemy.enemy_name << "\n"; //you're currently fighting on the subsequent ones
-    std::cout << current_enemy.enemy_name << fight[3] << current_enemy.CHP << fight[4];
+    std::cout << current_enemy.enemy_name << fight[3] << current_enemy.CHP << fight[4] << "\n";
     for (int text = 5; text <= 9; text++)
         std::cout << fight[text] << "\n"; //text
     std::cout << fight[26] << pc.CHP << "\n";
@@ -865,7 +865,7 @@ void enemy_action(enemy& x)
     if (damage <= 0)
         damage = 1;
     pc.CHP -= damage;
-    std::cout << x.enemy_name << fight[28] << "\n" << fight[29] << damage << fight[30] << "\n" << shop[81];
+    std::cout << x.enemy_name << fight[27] << "\n" << fight[28] << damage << fight[29] << "\n" << shop[81];
     ico();
     if (pc.CHP <= 0)
         lose_battle();
@@ -877,7 +877,7 @@ void enemy_action(enemy& x)
 }
 void lose_battle()
 {
-    std::cout << fight[31] << "\n" << fight[32] << "\n" << shop[81] << "\n";
+    std::cout << fight[30] << "\n" << fight[31] << "\n" << shop[81] << "\n";
     pc.CHP = 1;
     lost_fights++;
     ico();
@@ -952,14 +952,14 @@ void dead_enemy(enemy& x)
     int drop = (rand() % 3) + 1; //drop
     std::cout << fight[14] << xp << " " << fight[15] << drop << " " << x.drops;
     pc.current_xp = pc.current_xp + xp;
-    if (x.drops == "Bone")
+    if (x.drops == bone.name)
         bone.number += drop;
-    if (x.drops == "Rotten Flesh")
-        rotten_flesh.number += drop;
-    if (x.drops == "Gunpowder")
-        gunpowder.number += drop;
-    if (x.drops == "Iron Ingot")
-        iron_ingot.number += drop;
+    if (x.drops == rotten_flesh.name)
+        rotten_flesh.number += drop; //change
+    if (x.drops == gunpowder.name)
+        gunpowder.number += drop; //change
+    if (x.drops == iron_ingot.name)
+        iron_ingot.number += drop; //change
     std::cout << "\n" << shop[81] << "\n";
     ico();
     if (pc.current_xp >= pc.xp_for_next_level)
@@ -981,7 +981,10 @@ void level_up(player& pc)
     pc.DEF++;
     pc.THP += 10;
     pc.CHP = pc.THP;
-    std::cout << fight[27] << pc.level << "\n" << shop[81];
+    if (language != 3)
+        std::cout << fight[32] << pc.level << "\n" << shop[81];
+    else
+        std::cout << fight[32] << pc.level << fight[33] << "\n" << shop[81];
     ico();
     main_menu();
 }
@@ -1875,10 +1878,10 @@ void main()
     cfi.cbSize = sizeof(cfi);
     cfi.nFont = 0;
     cfi.dwFontSize.X = 0;                   // Width of each character in the font
-    cfi.dwFontSize.Y = 24;                  // Height
+    cfi.dwFontSize.Y = 15;                  // Height of each character in the font
     cfi.FontFamily = FF_DONTCARE;
     cfi.FontWeight = FW_NORMAL;
-    std::wcscpy(cfi.FaceName, L"Consolas"); // Choose your font
+    std::wcscpy(cfi.FaceName, L"Consolas"); // font
     SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
     readascii(); //reads all ascii stuff
     for (int e = 767; e <= 778; e++)

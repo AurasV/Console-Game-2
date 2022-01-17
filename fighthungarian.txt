@@ -1,7 +1,7 @@
 Megtamadt: 
 Harcolsz: 
-HP-val rendelkezik
-jelenlegi eletero 
+ HP-val rendelkezik 
+ jelenlegi eletero 
 Valasz az alabbi opciok kozul, mit szeretnel tenni: 
 1) Tamadas 
 2) Use a health potion but hungarian  
@@ -13,19 +13,21 @@ A harcot elvesztetted.
 Nyertel! Ugyes! 
 Szereztel 
 XP-t es 
-Successfully escaped! but hungarian 
-You didn't escape! but hungarian 
-You have: but hungarian 
-1) Normal Gyogyelixir - 
-2) Remek Gyogyelixir - 
-3) Rendkivuli Elixir - 
+Sikeresen megmenekültél! 
+Nem menekültél meg! 
+A birtokodban: 
+1) Normal Gyogyelixir +10 hp - 
+2) Remek Gyogyelixir +20 hp - 
+3) Rendkivuli Elixir +30 hp - 
 0) Vissza 
-What do you want to use? but hungarian
-You already are full hp! but hungarian
-You don't have any: but hungarian
-Congratulations! You leveled up to level but hungarian - 
- attacked you! but hungarian 
-It did but hungarian 
- damage. but hungarian 
-You lost the battle! but hungarian 
-You ran back to safety, barely escaping. but hungarian 
+Mit szeretnél használni? 
+A HP-d már a maximumon van! 
+Nincs a birtokodban: 
+A jelenlegi HP-d:  
+ megtámadott! 
+
+ sebzést okozott
+Elvesztetted a csatát!
+Vissza rohantál a biztonságba de ali menekültél meg. 
+Gratulálok! Szintet léptél 
+ szintre.

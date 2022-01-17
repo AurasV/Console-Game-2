@@ -24,9 +24,9 @@ What do you want to use?
 You already are full hp! 
 You don't have any: 
 You current hp is - 
-Congratulations! You leveled up to level - 
  attacked you!
 It did 
  damage.
 You lost the battle!
 You ran back to safety, barely escaping.
+Congratulations! You leveled up to level - 
