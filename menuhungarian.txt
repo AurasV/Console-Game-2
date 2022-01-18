@@ -8,5 +8,5 @@ Valassz mit szeretnel cainalni:
 6) Jatek betoltes 
 0) Jatek kilepes 
 Biztos vagy benne hogy kiszeretnel lepni? 
-File doesn't exist! but hungarian 
-Exiting... but hungarian 
+A fájl már létezik! 
+Kilépés... 

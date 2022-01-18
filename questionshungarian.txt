@@ -2,16 +2,16 @@ Nev:
 ez a nev helyes? 
 1) Igen 
 2) Nem 
-Choose the save slot you want to save to but hungarian:  
+Válaszd ki a mentés helyét ahová szeretnél menteni:  
 1) Save Slot 1 
 2) Save Slot 2 
 3) Save Slot 3 
 0) Back 
-Choose the save slot you want to load from but hungarian: 
+Válaszd ki a mentés helyt ahonnan beszeretnél tolteni: 
 1) Save Slot 1 
 2) Save Slot 2 
 3) Save Slot 3 
 0) Back 
-Save already exists, do you want to overwrite? but hungarian 
+Ez a hely már tartalmaz egy mentést, szeretnéd áttírni?
 1) Igen 
 2) Nem 

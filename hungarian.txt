@@ -14,7 +14,7 @@ Would you like to see the story? but hungarian
 1) Igen 
 2) Nem 
 Congratulations you finished the game! but hungarian 
-You needed: 
+You took: 
  days. but hungarian
 You lost: 
  fights. but hungarian

@@ -79,6 +79,6 @@ Nincs elegendo aranyad ahiz hogy ezt megvedd
 Hiba, kerlek probald ujra: 
  adtal el 
 Nyomji barmilyen gombot a kilepeshez
-Bought but hungarian 
-You have better armor already but hungarian!
-You have better weapon already but hungarian! 
+Vett 
+Már van egy jobb páncél van a birtokodban! 
+Már van egy jobb fegyver van a birtokodban! 

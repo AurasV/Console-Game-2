@@ -1,18 +1,18 @@
-Iron Ingot 
-Lingou de Fier 
-Vasrud 
+Iron Ingot
+Lingou de Fier
+Vasrud
 20 
-Rotten Flesh 
-Carne Putrezita 
-Rohadt Hus 
+Rotten Flesh
+Carne Putrezita
+Rohadt Hus
 10 
-Bone 
-Os 
-Csont 
+Bone
+Os
+Csont
 5 
-Gunpowder 
-Praf de Pusca 
-Puskapor 
+Gunpowder
+Praf de Pusca
+Puskapor
 25 
 Normal Health Potion 
 Potiune de Viata Normala 
