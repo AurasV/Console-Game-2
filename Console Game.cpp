@@ -1882,9 +1882,9 @@ void main()
     SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
     readascii(); //reads all ascii stuff
     for (int e = 767; e <= 778; e++)
-        std::cout << string_ascii[e] << "\n"; //loading screen
-    SetConsoleTitleA("Recover your strength"); //set the title of the game
-    srand((int)time(0)); //for randomness
+        std::cout << string_ascii[e] << "\n"; //loading screen 
+    SetConsoleTitleA("Recover your strength"); //set the title of the game 
+    srand((int)time(0)); //for randomness 
     system("CLS"); // clear console
     languagechoice(); //language choice 
     read_language(a, language); //read the story and the questions
