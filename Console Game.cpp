@@ -16,16 +16,6 @@ if (f.is_open())
         }
 int r = (rand() % max_number) + 1; //randomness
 */
-/*
-TO DO:
-finish fight_action function
-implement the use for player stats
-make a check for levels (more exactly for when the game is done)
-think of player progression when it comes to leveling up and stats increase from that
-think of how enemies scale
-save system
-think of what's missing
-*/
 std::ifstream questionshungarian("questionshungarian.txt"); //file containing questions hungarian
 std::ifstream questionsromanian("questionsromanian.txt"); //file containing questions romanian
 std::ifstream questionsenglish("questionsenglish.txt"); //file containing questions english
