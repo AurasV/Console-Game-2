@@ -10,12 +10,12 @@ Ujra erore kell lelned ahoz higy harcolhass.
 Erd al 25. szintet ahoz hogy legyozdhesd az ellensegeidet. 
 A boltban eszkozoket/pancelt/fegyvereket vehetsz, amik segitenek az utadon. 
 Miutan legyoztel egy ellenseget, XP-t es eszkozoket nyersz, amiket eladhatsz a boltban. 
-Would you like to see the story? but hungarian 
+Szeretned latni a tortenet?
 1) Igen 
 2) Nem 
-Congratulations you finished the game! but hungarian 
-You took: 
- days. but hungarian
-You lost: 
- fights. but hungarian
-The game will now kill itself if you press any key. but hungarian 
+Gratulalok! A jatekot befejezted. 
+ 
+ napig tartott a jatek befejezese.
+ 
+ harcot veszitettel. 
+A jatek on megsemmisul ha lenyomsz barmilyen billentyuzetet, 

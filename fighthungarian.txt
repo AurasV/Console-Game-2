@@ -13,21 +13,21 @@ A harcot elvesztetted.
 Nyertel! Ugyes! 
 Szereztel 
 XP-t es 
-Sikeresen megmenekültél! 
-Nem menekültél meg! 
+Sikeresen megmenekultel! 
+Nem menekultel meg! 
 A birtokodban: 
 1) Normal Gyogyelixir +10 hp - 
 2) Remek Gyogyelixir +20 hp - 
 3) Rendkivuli Elixir +30 hp - 
 0) Vissza 
-Mit szeretnél használni? 
-A HP-d már a maximumon van! 
+Mit szeretnel hasznalni? 
+A HP-d mar a maximumon van! 
 Nincs a birtokodban: 
 A jelenlegi HP-d:  
- megtámadott! 
+ megtamadott! 
 
  sebzést okozott
-Elvesztetted a csatát!
-Vissza rohantál a biztonságba de ali menekültél meg. 
-Gratulálok! Szintet léptél 
+Elvesztetted a csatat!
+Vissza rohantál a biztonsagba de ali menekultel meg. 
+Gratulalok! Szintet leptel 
  szintre.

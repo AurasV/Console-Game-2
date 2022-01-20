@@ -848,10 +848,10 @@ void fight_action(enemy& current_enemy)
 void enemy_action(enemy& x) 
 {
 
-    int random_buff = (rand() % 4) + 1;
-    int random_debuff = (rand() % 3) + 1;
-    int damage = (rand() % (3 * pc.level)) + 1;
-    damage = damage + random_buff - random_debuff - int(sqrt(pc.DEF));
+    int random_buff = (rand() % 4) + 1; //random buff
+    int random_debuff = (rand() % 3) + 1; //random debuff
+    int damage = (rand() % (3 * pc.level)) + 1; //base dmg
+    damage = damage + random_buff - random_debuff - int(sqrt(pc.DEF)); //final damage
     if (damage <= 0)
         damage = 1;
     pc.CHP -= damage;
@@ -906,6 +906,10 @@ void fight_enemy_generate(enemy& current_enemy) //generate enemy
         max_enemy_ascii = 765;
         current_enemy = iron_golem; //2% chance of iron_golem
     }
+    current_enemy.DEF += int(sqrt(pc.level) * 3);
+    current_enemy.ATK += int(sqrt(pc.level) * 3);
+    current_enemy.CHP += int(sqrt(pc.level) * 5);
+    current_enemy.THP += int(sqrt(pc.level) * 5);
 }
 void playercurrentstate(player& x) //output current player state
 {
@@ -1865,8 +1869,8 @@ void main()
 {  
     /*
     a lot of these functions could be done in the main program but I'd rather
-    make them functions so its easier to digest because it has a self explanatory
-    and it helps keep track of them 
+    make them functions so its easier to digest because they have a self explanatory name
+    and it helps keep track of them (of course I wouldn't do this with a bigger project)
     */
     ::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000); //fullscreen
     CONSOLE_FONT_INFOEX cfi;
