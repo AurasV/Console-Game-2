@@ -15,6 +15,7 @@ if (f.is_open())
                 cout << b << "\n";
         }
 int r = (rand() % max_number) + 1; //randomness
+PlaySound(L"file_name", NULL, SND_FILENAME | SND_ASYNC);
 */
 std::ifstream questionshungarian("questionshungarian.txt"); //file containing questions hungarian
 std::ifstream questionsromanian("questionsromanian.txt"); //file containing questions romanian
