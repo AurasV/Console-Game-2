@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <windows.h>
+#include <Python.h>
 /*
 if (f.is_open())
         {
