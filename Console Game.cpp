@@ -8,7 +8,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <windows.h>
-#include <Python.h>
 /*
 if (f.is_open())
         {
@@ -16,7 +15,7 @@ if (f.is_open())
                 cout << b << "\n";
         }
 int r = (rand() % max_number) + 1; //randomness
-PlaySound(L"file_name", NULL, SND_FILENAME | SND_ASYNC);
+PlaySound(L"Sounds\\mob\\file_name.wav", NULL, SND_FILENAME | SND_ASYNC);
 */
 std::ifstream questionshungarian("questionshungarian.txt"); //file containing questions hungarian
 std::ifstream questionsromanian("questionsromanian.txt"); //file containing questions romanian
@@ -35,17 +34,17 @@ std::ifstream menuromanian("menuromanian.txt"); //romanian version of the menu
 std::ifstream menuhungarian("menuhungarian.txt"); //hungarian version of the menu
 std::ifstream ascii("ascii images.txt"); //text file containing ascii art for everything
 std::string b, first_name, last_name, c, story[100], questions[100], d, ar, fight[100],shop[100],menu[100];
-int i, language, j, k, r, enemy_number, e, item_number, p, weapon_number, armor_number, death_number;
+int i, language, j, k, r, enemy_number = 0, e, item_number, p, weapon_number, armor_number, death_number, mute_sound;
 int day = 1;
 char a; //player input variable
 bool ok_name = false, ok_fight_first = true, ok_access_shop = false, test, enemy_dead = false, action_done = false;
 int lost_fights = 0;
 int min_enemy_ascii, max_enemy_ascii;
-std::string string_ascii[801];
+std::string string_ascii[820];
 struct player //player
 {
     std::string player_name = { " " }; //player name
-    float ATK = { 5 }, DEF = { 5 }, THP = { 20 }, CHP = { 20 }; //player number stats
+    float ATK = { 8 }, DEF = { 8 }, THP = { 25 }, CHP = { 25 }; //player number stats
     int current_xp = { 0 }; //current xp
     int level = { 1 }; //current level
     int xp_for_next_level = { 50 };
@@ -810,11 +809,49 @@ void fight_action(enemy& current_enemy)
     system("CLS");
     if (enemy_dead == true)
         dead_enemy(current_enemy); //what to do if the enemy died
+    std::string sound_path;
+    int say_random = (rand() % 2) + 1; //randomness    
     if (action_done == true)
     {
         action_done = false;
         enemy_action(current_enemy);
     }
+    if (mute_sound == 0) //mute the sound when the player tries to run so it doesn't become annoying
+        switch (current_enemy.enemy_name[0]) //check the first letter of the name so there's no need for nested if elses
+        {
+        case 'Z':
+            if (say_random == 1) //two versions of say sound
+                PlaySound(L"Sounds\\zombie\\say1.wav", NULL, SND_FILENAME | SND_ASYNC);
+            else
+                PlaySound(L"Sounds\\zombie\\say2.wav", NULL, SND_FILENAME | SND_ASYNC);
+            break;
+        case 'S':
+            if (say_random == 1) //two versions of say sound
+                PlaySound(L"Sounds\\skeleton\\say1.wav", NULL, SND_FILENAME | SND_ASYNC);
+            else
+                PlaySound(L"Sounds\\skeleton\\say2.wav", NULL, SND_FILENAME | SND_ASYNC);
+            break;
+        case 'C':
+            if (say_random == 1) //two versions of say sound
+                PlaySound(L"Sounds\\creeper\\say1.wav", NULL, SND_FILENAME | SND_ASYNC);
+            else
+                PlaySound(L"Sounds\\creeper\\say2.wav", NULL, SND_FILENAME | SND_ASYNC);
+            break;
+        case 'H':
+            if (say_random == 1) //two versions of say sound
+                PlaySound(L"Sounds\\husk\\say1.wav", NULL, SND_FILENAME | SND_ASYNC);
+            else
+                PlaySound(L"Sounds\\husk\\say2.wav", NULL, SND_FILENAME | SND_ASYNC);
+            break;
+        case 'I':
+            if (say_random == 1) //two versions of say sound
+                PlaySound(L"Sounds\\irongolem\\say1.wav", NULL, SND_FILENAME | SND_ASYNC);
+            else
+                PlaySound(L"Sounds\\irongolem\\say2.wav", NULL, SND_FILENAME | SND_ASYNC);
+            break;
+        default:
+            break;
+        };
     if (ok_fight_first == true) 
     {
         std::cout << fight[1] << " " << current_enemy.enemy_name << "\n"; //you've been attacked by on the first run
@@ -840,6 +877,7 @@ void fight_action(enemy& current_enemy)
         enemy_stats(current_enemy);
         break;
     case '0':
+        mute_sound = 1;
         try_to_run(current_enemy);
         break;
     default:
@@ -908,11 +946,11 @@ void fight_enemy_generate(enemy& current_enemy) //generate enemy
         max_enemy_ascii = 765;
         current_enemy = iron_golem; //2% chance of iron_golem
     }
-    current_enemy.DEF += int(sqrt(pc.level) * 3);
-    current_enemy.ATK += int(sqrt(pc.level) * 3);
-    current_enemy.CHP += int(sqrt(pc.level) * 5);
-    current_enemy.THP += int(sqrt(pc.level) * 5);
-}
+    current_enemy.DEF += int(sqrt(pc.level) * 2); //scale according to level
+    current_enemy.ATK += int(sqrt(pc.level) * 2); //scale according to level
+    current_enemy.CHP += int(sqrt(pc.level) * 4); //scale according to level
+    current_enemy.THP += int(sqrt(pc.level) * 4); //scale according to level
+} //the scalings probably dont work at later levels...
 void playercurrentstate(player& x) //output current player state
 {
     int equip_def = equip.h_def + equip.c_def + equip.p_def + equip.b_def; //add alll armor stats
@@ -942,6 +980,26 @@ void playercurrentstate(player& x) //output current player state
 }
 void dead_enemy(enemy& x)
 {
+    switch (current_enemy.enemy_name[0]) //check first letter so there's no need for nested if elses
+    {
+    case 'Z': //death sound
+        PlaySound(L"Sounds\\zombie\\death.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    case 'S': //death sound
+        PlaySound(L"Sounds\\skeleton\\death.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    case 'C': //death sound
+        PlaySound(L"Sounds\\creeper\\death.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    case 'H': //death sound
+        PlaySound(L"Sounds\\husk\\death.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    case 'I': //death sound
+        PlaySound(L"Sounds\\irongolem\\death.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    default:
+        break;
+    };
     system("CLS");
     std::cout << fight[13] << "\n";
     int xp = (rand() % 10 * pc.level) + 1; //xp
@@ -1039,11 +1097,48 @@ void attack_enemy(enemy& x)
         damage *= 2;
     if (damage <= 0)
         damage = 1;
+    int hurt_random = (rand() % 2) + 1; //randomness 
+    switch (current_enemy.enemy_name[0]) //check the first letter of the name so there's no need for nested if elses
+    {
+    case 'Z':
+        if (hurt_random == 1) //there's two versions of the hurting sound
+            PlaySound(L"Sounds\\zombie\\hurt1.wav", NULL, SND_FILENAME | SND_ASYNC);
+        else
+            PlaySound(L"Sounds\\zombie\\hurt2.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    case 'S':
+        if (hurt_random == 1) //there's two versions of the hurting sound
+            PlaySound(L"Sounds\\skeleton\\hurt1.wav", NULL, SND_FILENAME | SND_ASYNC);
+        else
+            PlaySound(L"Sounds\\skeleton\\hurt2.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    case 'C':
+        if (hurt_random == 1) //there's two versions of the hurting sound
+            PlaySound(L"Sounds\\creeper\\hurt1.wav", NULL, SND_FILENAME | SND_ASYNC);
+        else
+            PlaySound(L"Sounds\\creeper\\hurt2.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    case 'H':
+        if (hurt_random == 1) //there's two versions of the hurting sound
+            PlaySound(L"Sounds\\husk\\hurt1.wav", NULL, SND_FILENAME | SND_ASYNC);
+        else
+            PlaySound(L"Sounds\\husk\\hurt2.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    case 'I':
+        if (hurt_random == 1) //there's two versions of the hurting sound
+            PlaySound(L"Sounds\\irongolem\\hurt1.wav", NULL, SND_FILENAME | SND_ASYNC);
+        else
+            PlaySound(L"Sounds\\irongolem\\hurt2.wav", NULL, SND_FILENAME | SND_ASYNC);
+        break;
+    default:
+        break;
+    };
     x.CHP = x.CHP - damage; //change enemy hp
     if (x.CHP <= 0)
         enemy_dead = true;
     std::cout << fight[10] << damage << fight[11] << "\n" << shop[81];
     action_done = true; //counts as an action so the enemy can attack
+    mute_sound = 0;
     ico();
     fight_action(x);
 }
