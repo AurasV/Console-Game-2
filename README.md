@@ -8,7 +8,7 @@ CPU Speed: 2.10 GHz
 GPU: GT 430 1GB Gainward Edition  
 RAM: 3 GB DDR2 600 MHz  
 OS: Windows 7 64 Bit Service Pack 1 or later  
-Free Disk Space: 20MB_  
+Free Disk Space: 100MB_  
   
 [Link to game only](https://github.com/AurasV/Finished-Console-Game)  
   
