@@ -16,7 +16,8 @@ This has been built and tested mostly on Windows 10 so I can't guarantee that it
 #### **CREDITS:**  
 ASCII Art done using [manytools](https://manytools.org/hacker-tools/convert-images-to-ascii-art/)  
 Story is based on The Elder Scrolls V: Skyrim  
-Weapons, items and enemies are from Minecraft  
+Weapons, sounds, items and enemies are from Minecraft  
+Sounds unpacked using [Minecraft wiki](https://minecraft.fandom.com/wiki/Tutorials/Sound_directory)  
 Romanian and English translations done by me  
 Programming done by me  
 Hungarian translation done by Vero  
