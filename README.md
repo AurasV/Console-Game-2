@@ -13,7 +13,7 @@ This has been built and tested mostly on Windows 10 so I can't guarantee that it
   
 [Link to game only](https://github.com/AurasV/Finished-Console-Game)  
   
-Credits:  
+#### **CREDITS:**  
 ASCII Art done using [manytools](https://manytools.org/hacker-tools/convert-images-to-ascii-art/)  
 Story is based on The Elder Scrolls V: Skyrim  
 Weapons, items and enemies are from Minecraft  
