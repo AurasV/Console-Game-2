@@ -23,4 +23,4 @@ Programming done by me
 Hungarian translation done by Vero  
   
   
-![140732825-35d83818-92db-48e7-9a56-78b625a62378](https://user-images.githubusercontent.com/80701407/142838556-f5c5cc31-4950-48af-9dad-59ac6f90dd20.png)
+![W7](https://user-images.githubusercontent.com/80701407/152657374-245b6954-e32b-438a-81d9-4bb1b2d342ef.png)
