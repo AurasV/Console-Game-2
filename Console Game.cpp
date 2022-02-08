@@ -35,11 +35,10 @@ std::ifstream menuhungarian("menuhungarian.txt"); //hungarian version of the men
 std::ifstream ascii("ascii images.txt"); //text file containing ascii art for everything
 std::string b, first_name, last_name, c, story[100], questions[100], d, ar, fight[100],shop[100],menu[100];
 int i, language, j, k, r, enemy_number = 0, e, item_number, p, weapon_number, armor_number, death_number, mute_sound;
-int day = 1;
+int day = 1, min_enemy_ascii, max_enemy_ascii;
 char a; //player input variable
 bool ok_name = false, ok_fight_first = true, ok_access_shop = false, test, enemy_dead = false, action_done = false;
 int lost_fights = 0;
-int min_enemy_ascii, max_enemy_ascii;
 std::string string_ascii[820];
 struct player //player
 {
