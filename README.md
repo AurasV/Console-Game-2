@@ -9,7 +9,7 @@ GPU: GT 430 1GB Gainward Edition
 RAM: 3 GB DDR2 600 MHz  
 OS: Windows 7 64 Bit Service Pack 1 or later  
 Free Disk Space: 100MB  
-This has been built and tested mostly on Windows 10 so I can't guarantee that it will work on older versions or Windows 11. I did run it on Windows 7 and it worked fine but not on Windows 8/8.1 or XP so don't expect support for that._   
+This has been built and tested mostly on Windows 10 so I can't guarantee that it will work on older versions or Windows 11. I did run it on Windows 7 and Windows 8.1 it worked fine on Windows 7 but not on Windows 8/8.1 didn't even run it on XP so don't expect support for XP or Windows 8._   
   
 [Link to game only](https://github.com/AurasV/Finished-Console-Game)  
   
