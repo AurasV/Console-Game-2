@@ -1968,8 +1968,8 @@ void main()
     make them functions so its easier to digest because they have a self explanatory name
     and it helps keep track of them (of course I wouldn't do this with a bigger project)
     */
-    ::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000); //fullscreen
-    SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), CONSOLE_FULLSCREEN_MODE, 0);
+    ::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000); //fullscreen W10
+    SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), CONSOLE_FULLSCREEN_MODE, 0); //fulscreen W7
     CONSOLE_FONT_INFOEX cfi;
     cfi.cbSize = sizeof(cfi);
     cfi.nFont = 0;
@@ -1978,7 +1978,7 @@ void main()
     cfi.FontFamily = FF_DONTCARE;
     cfi.FontWeight = FW_NORMAL;
     std::wcscpy(cfi.FaceName, L"Consolas"); // font
-    SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+    SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi); 
     readascii(); //reads all ascii stuff
     for (int e = 767; e <= 778; e++)
         std::cout << string_ascii[e] << "\n"; //loading screen 
