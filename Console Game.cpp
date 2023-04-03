@@ -390,10 +390,10 @@ void access_shop()
     switch (a)
     {
     case '1': //if answer is buy
-        shop_buy(); 
+        shop_buy();
         break;
     case '2': //if answer is sell
-        shop_sell(); 
+        shop_sell();
         break;
     case '0': //exit
         main_menu();
@@ -403,8 +403,8 @@ void access_shop()
         std::cout << shop[79] << "\n"; //if wrong input
         access_shop();
         break;
-    }
-}
+    };
+};;
 void shop_buy()
 {
     for (int shop_counter = 7; shop_counter <= 11; shop_counter++)
